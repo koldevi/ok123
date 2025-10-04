@@ -124,3 +124,12 @@ footer {
     padding: 10px 16px; /* comfortable padding */
     box-sizing: border-box;
 }
+/* ===== Product Page Add to Cart Button ===== */
+.product .snipcart-add-item {
+    width: auto !important;          /* Allow the button to size naturally */
+    max-width: 240px !important;     /* Set a maximum width */
+    margin: 10px auto !important;    /* Center the button */
+    padding: 10px 16px !important;   /* Adjust padding for better clickability */
+    display: block !important;       /* Ensure the button is a block-level element */
+    box-sizing: border-box !important; /* Include padding in the element's total width and height */
+}
