@@ -1,198 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/style.css">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Favicon -->
-<link rel="icon" href="assets/favico.png" type="image/png">
-<link rel="apple-touch-icon" href="favicon.png">
-
-<title>KoldeviP</title>
-
-<!-- Fonts & Snipcart CSS -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
-
-<style>
-body {
-    background: #fafafa;
-    color: #222;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
-
-.logo img {
-    height: 86px;
-    display: block;
-    margin: 0 auto;
-}
-
-nav a,
-nav a:visited {
-    color: #000;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 15px;
-}
-
-nav a:hover {
-    color: #555;
-}
-
-.cart-btn {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 6px;
-}
-
-.cart-btn:hover {
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
-}
-
-.products {
-  display: flex;
-  flex-direction: column; /* makes them stack vertically */
-  align-items: center; /* centers items horizontally */
-  gap: 30px; /* space between items */
-  margin-top: 40px;
-}
-
-.product {
-  text-align: center;
-}
-
-.product img {
-  width: 250px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.product img:hover {
-  transform: scale(1.05);
-}
-
-.product p {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 10px;
-  color: #333;
-}
-
-
-.product button {
-    width: calc(100% - 24px);
-    margin: 0 12px 12px;
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.product button:hover {
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    color: #666;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Koldevi</title>
+  <link rel="icon" href="assets/favico.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Snipcart CSS (kept as you had it) -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
+  <!-- header minimal like Yeezy -->
+  <header class="kd-header">
+    <a class="kd-brand" href="index.html">KOLDEVI</a>
+    <button class="kd-cart snipcart-checkout" aria-label="Open cart">Cart</button>
+  </header>
 
-<header>
-  <a href="index.html" class="logo">
-      <img src="assets/logo.png" alt="Koldevi Logo">
-  </a>
-  <nav>
-      <a href="index.html">Shop</a>
-      <a href="landing-password.html">Join VIP</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
-  </nav>
-  <button class="cart-btn snipcart-checkout">Cart</button>
-</header>
+  <!-- full viewport product slides -->
+  <main id="slides" class="slides">
+    <!-- Slide: V1 (Zip Up Red Hoodie) -->
+    <section class="slide" data-sku="zip-up-red" data-name="Zip Up Red Hoodie" data-price="75" data-url="zip-up-red.html">
+      <div class="slide-media" style="background-image:url('assets/front-red-hoodie.png')"></div>
+      <div class="slide-meta">
+        <h1>V1 — Zip Up Red Hoodie</h1>
+        <div class="price">$75</div>
+        <button class="btn-add snipcart-add-item"
+          data-item-id="zip-up-red"
+          data-item-name="Zip Up Red Hoodie"
+          data-item-price="75"
+          data-item-url="zip-up-red.html"
+          data-item-description="Zip Up Red Hoodie">
+          Add to cart
+        </button>
+        <a class="view-product" href="zip-up-red.html">View product</a>
+      </div>
+    </section>
 
-<section class="products">
-  <!-- Red Hoodie -->
-  <div class="product">
-    <a href="zip-up-red.html">
-      <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
-      <h3>Zip Up Red Hoodie</h3>
-      <p>$75</p>
-    </a>
-    <button class="snipcart-add-item"
-      data-item-id="zip-up-red"
-      data-item-name="Zip Up Red Hoodie"
-      data-item-price="75"
-      data-item-url="zip-up-red.html"
-      data-item-description="Zip Up Red Hoodie">
-      Add to Cart
-    </button>
-  </div>
+    <!-- Slide: V2 (Purple) -->
+    <section class="slide" data-sku="zip-up-purple" data-name="Zip Up Purple Hoodie" data-price="75" data-url="zip-up-purple.html">
+      <div class="slide-media" style="background-image:url('assets/front-zip-up-purple-logo.png')"></div>
+      <div class="slide-meta">
+        <h1>V2 — Zip Up Purple Hoodie</h1>
+        <div class="price">$75</div>
+        <button class="btn-add snipcart-add-item"
+          data-item-id="zip-up-purple"
+          data-item-name="Zip Up Purple Hoodie"
+          data-item-price="75"
+          data-item-url="zip-up-purple.html"
+          data-item-description="Zip Up Purple Hoodie">
+          Add to cart
+        </button>
+        <a class="view-product" href="zip-up-purple.html">View product</a>
+      </div>
+    </section>
 
-  <!-- Purple Hoodie -->
-  <div class="product">
-    <a href="zip-up-purple.html">
-      <img src="assets/front-zip-up-purple-logo.png" alt="Zip Up Purple Hoodie">
-      <h3>Zip Up Purple Hoodie</h3>
-      <p>$75</p>
-    </a>
-    <button class="snipcart-add-item"
-      data-item-id="zip-up-purple"
-      data-item-name="Zip Up Purple Hoodie"
-      data-item-price="75"
-      data-item-url="zip-up-purple.html"
-      data-item-description="Zip Up Purple Hoodie">
-      Add to Cart
-    </button>
-  </div>
+    <!-- Slide: V3 (Black Logo Zip) -->
+    <section class="slide" data-sku="black-logo-hoodie" data-name="Black Logo Zip Up Hoodie" data-price="85" data-url="black-logo-zip.html">
+      <div class="slide-media" style="background-image:url('assets/black-logo-zip-up.png')"></div>
+      <div class="slide-meta">
+        <h1>V3 — Black Logo Zip Up Hoodie</h1>
+        <div class="price">$85</div>
+        <button class="btn-add snipcart-add-item"
+          data-item-id="black-logo-hoodie"
+          data-item-name="Black Logo Zip Up Hoodie"
+          data-item-price="85"
+          data-item-url="black-logo-zip.html"
+          data-item-description="Black Logo Zip Up Hoodie">
+          Add to cart
+        </button>
+        <a class="view-product" href="black-logo-zip.html">View product</a>
+      </div>
+    </section>
+  </main>
 
-  <!-- Black Hoodie -->
-  <div class="product">
-    <a href="black-logo-zip.html">
-      <img src="assets/black-logo-zip-up.png" alt="Black Logo Zip Up Hoodie">
-      <h3>Black Logo Zip Up Hoodie</h3>
-      <p>$85</p>
-    </a>
-    <button class="snipcart-add-item"
-      data-item-id="black-logo-hoodie"
-      data-item-name="Black Logo Zip Up Hoodie"
-      data-item-price="85"
-      data-item-url="black-logo-zip.html"
-      data-item-description="Black Logo Zip Up Hoodie">
-      Add to Cart
-    </button>
-  </div>
-</section>
+  <!-- Snipcart placeholder you provided (keeps your API key) -->
+  <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+  <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 
-<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
-<script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+  <!-- small script to enable arrow keys and ensure snap on wheel (optional but helpful) -->
+  <script>
+    (function(){
+      const slides = document.querySelectorAll('.slide');
+      const container = document.getElementById('slides');
+      let index = 0;
+      function go(i){ index = Math.max(0, Math.min(slides.length-1, i)); slides[index].scrollIntoView({behavior:'smooth'}); }
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowDown') { e.preventDefault(); go(index+1); }
+        if(e.key === 'ArrowUp') { e.preventDefault(); go(index-1); }
+      });
+      container.addEventListener('scroll', ()=>{
+cat > index.html <<'HTML'
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Koldevi</title>
+  <link rel="icon" href="assets/favico.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Snipcart CSS (kept as you had it) -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body>
+  <!-- header minimal like Yeezy -->
+  <header class="kd-header">
+    <a class="kd-brand" href="index.html">KOLDEVI</a>
+    <button class="kd-cart snipcart-checkout" aria-label="Open cart">Cart</button>
+  </header>
+
+  <!-- full viewport product slides -->
+  <main id="slides" class="slides">
+    <!-- Slide: V1 (Zip Up Red Hoodie) -->
+    <section class="slide" data-sku="zip-up-red" data-name="Zip Up Red Hoodie" data-price="75" data-url="zip-up-red.html">
+      <div class="slide-media" style="background-image:url('assets/front-red-hoodie.png')"></div>
+      <div class="slide-meta">
+        <h1>V1 — Zip Up Red Hoodie</h1>
+        <div class="price">$75</div>
+        <button class="btn-add snipcart-add-item"
+          data-item-id="zip-up-red"
+          data-item-name="Zip Up Red Hoodie"
+          data-item-price="75"
+          data-item-url="zip-up-red.html"
+          data-item-description="Zip Up Red Hoodie">
+          Add to cart
+        </button>
+        <a class="view-product" href="zip-up-red.html">View product</a>
+      </div>
+    </section>
+
+    <!-- Slide: V2 (Purple) -->
+    <section class="slide" data-sku="zip-up-purple" data-name="Zip Up Purple Hoodie" data-price="75" data-url="zip-up-purple.html">
+      <div class="slide-media" style="background-image:url('assets/front-zip-up-purple-logo.png')"></div>
+      <div class="slide-meta">
+        <h1>V2 — Zip Up Purple Hoodie</h1>
+        <div class="price">$75</div>
+        <button class="btn-add snipcart-add-item"
+          data-item-id="zip-up-purple"
+          data-item-name="Zip Up Purple Hoodie"
+          data-item-price="75"
+          data-item-url="zip-up-purple.html"
+          data-item-description="Zip Up Purple Hoodie">
+          Add to cart
+        </button>
+        <a class="view-product" href="zip-up-purple.html">View product</a>
+      </div>
+    </section>
+
+    <!-- Slide: V3 (Black Logo Zip) -->
+    <section class="slide" data-sku="black-logo-hoodie" data-name="Black Logo Zip Up Hoodie" data-price="85" data-url="black-logo-zip.html">
+      <div class="slide-media" style="background-image:url('assets/black-logo-zip-up.png')"></div>
+      <div class="slide-meta">
+        <h1>V3 — Black Logo Zip Up Hoodie</h1>
+        <div class="price">$85</div>
+        <button class="btn-add snipcart-add-item"
+          data-item-id="black-logo-hoodie"
+          data-item-name="Black Logo Zip Up Hoodie"
+          data-item-price="85"
+          data-item-url="black-logo-zip.html"
+          data-item-description="Black Logo Zip Up Hoodie">
+          Add to cart
+        </button>
+        <a class="view-product" href="black-logo-zip.html">View product</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Snipcart placeholder you provided (keeps your API key) -->
+  <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+  <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+
+  <!-- small script to enable arrow keys and ensure snap on wheel (optional but helpful) -->
+  <script>
+    (function(){
+      const slides = document.querySelectorAll('.slide');
+      const container = document.getElementById('slides');
+      let index = 0;
+      function go(i){ index = Math.max(0, Math.min(slides.length-1, i)); slides[index].scrollIntoView({behavior:'smooth'}); }
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowDown') { e.preventDefault(); go(index+1); }
+        if(e.key === 'ArrowUp') { e.preventDefault(); go(index-1); }
+      });
+      container.addEventListener('scroll', ()=>{
+        const rects = Array.from(slides).map(s => s.getBoundingClientRect().top);
+        index = rects.findIndex(t => t >= 0) >= 0 ? rects.findIndex(t => t >= 0) : 0;
+      }, {passive:true});
+    })();
+  </script>
 </body>
 </html>

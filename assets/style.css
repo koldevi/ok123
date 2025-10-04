@@ -1,147 +1,47 @@
-/* ===== Global Styles ===== */
-body {
-    background: #fafafa;
-    color: #222;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+/* assets/style.css - Koldevi Yeezy-style cleaned and minimal */
+:root{
+  --bg:#ffffff;
+  --text:#0a0a0a;
+  --muted:#777;
+  --accent:#000;
+  --max:1300px;
+  --gap:24px;
 }
 
-/* ===== Links ===== */
-a, a:visited {
-    color: #000;           /* black links */
-    text-decoration: none;  /* no underline */
-}
-a:hover {
-    color: #555;           /* subtle hover */
-}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
-/* ===== Header ===== */
-header {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #000;
+.kd-header{
+  position:fixed;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:transparent;z-index:60;
 }
+.kd-brand{font-weight:700;letter-spacing:6px;text-decoration:none;color:var(--text);font-size:18px}
+.kd-cart{background:transparent;border:1px solid var(--text);color:var(--text);padding:8px 12px;border-radius:6px;font-weight:700;cursor:pointer}
 
-.logo img {
-    height: 86px;
-    display: block;
-    margin: 0 auto;
-}
+/* Slides container - full viewport vertical scroll */
+.slides{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory}
+.slide{height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:flex-end;justify-content:center}
+.slide-media{position:absolute;inset:0;background-size:cover;background-position:center center;filter:none}
+.slide::before{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(255,255,255,0.95) 18%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 70%);}
+.slide-meta{position:relative;z-index:30;max-width:var(--max);width:100%;display:flex;align-items:center;justify-content:flex-end;padding:48px}
+.slide-meta h1{font-size:24px;margin:0 24px 0 0;font-weight:700;letter-spacing:2px}
+.slide-meta .price{color:var(--muted);margin-right:16px;font-weight:600}
+.btn-add{background:var(--accent);color:#fff;border:0;padding:10px 16px;border-radius:6px;font-weight:700;cursor:pointer}
+.view-product{display:inline-block;margin-left:12px;text-decoration:none;color:var(--text);font-weight:600;opacity:0.9}
 
-nav a {
-    margin: 0 15px;
-    font-weight: 600;
-}
+/* Product pages snap sections */
+.product-page{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory}
+.snap-section{height:100vh;background-size:cover;background-position:center;scroll-snap-align:start;position:relative}
 
-/* ===== Buttons (cart, Snipcart, product buttons) ===== */
-button, .cart-btn, .snipcart-add-item {
-    background: #000;       /* black */
-    color: #fff;            /* white text */
-    border: 1px solid #000;
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
+/* sticky info (bottom right) for product page */
+.sticky-info{position:fixed;right:20px;bottom:20px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.08);z-index:90;display:flex;gap:12px;align-items:center}
+.prod-title{font-weight:700}
+.prod-price{color:var(--muted);font-weight:700;margin-top:2px}
+.size-select select{margin-left:8px;padding:6px;border-radius:6px;border:1px solid #ddd}
+.qty-input{width:60px;margin-left:8px;padding:6px;border-radius:6px;border:1px solid #ddd}
 
-button:hover, .cart-btn:hover, .snipcart-add-item:hover {
-    background: #fff;       /* invert on hover */
-    color: #000;
+/* responsive */
+@media (max-width:700px){
+  .slide-meta{padding:20px;justify-content:center;flex-direction:column;align-items:center;text-align:center}
+  .slide-meta h1{font-size:20px;margin-bottom:8px}
+  .sticky-info{left:12px;right:12px;bottom:12px;justify-content:space-between}
 }
-
-/* ===== Front page products (vertical layout) ===== */
-.products {
-    display: flex;
-    flex-direction: column;  /* stacked vertically */
-    align-items: center;
-    gap: 30px;
-    margin: 40px auto;
-    padding: 0 16px;
-}
-
-/* ===== Individual product card ===== */
-.product {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    overflow: hidden;
-    width: 240px;   /* fixed card width */
-}
-
-.product:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-}
-
-.product img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    display: block;
-}
-
-.product h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 4px 0;
-    color: #111;
-}
-
-.product p {
-    font-size: 13px;
-    color: #666;
-    margin: 0 0 6px;
-}
-
-/* ===== Product page images ===== */
-.product-images img {
-    width: 300px;       /* desktop width */
-    max-width: 100%;    /* shrink on mobile */
-    height: auto;
-    border-radius: 10px;
-    margin: 10px 0;
-    display: block;
-}
-
-/* ===== Footer ===== */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    color: #666;
-}
-/* ===== Fix Product Page Add to Cart Button ===== */
-.snipcart-add-item {
-    width: auto;        /* let button size itself */
-    max-width: 240px;   /* prevent stretching too wide */
-    display: block;     /* keep on its own line */
-    margin: 10px auto;  /* center button */
-    padding: 10px 16px; /* comfortable padding */
-    box-sizing: border-box;
-}
-/* ===== Product Page Add to Cart Button ===== */
-.product .snipcart-add-item {
-    width: 100%;                 /* matches card width */
-    max-width: 240px;            /* prevents over-stretch */
-    margin: 10px auto;           /* center under product */
-    padding: 10px 16px;
-    display: block;
-    box-sizing: border-box;
-    background: #000;
-    color: #fff;
-    border: 1px solid #000;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.snipcart-add-item:hover {
-    background: #fff;
-    color: #000;
-}
-

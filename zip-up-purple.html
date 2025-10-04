@@ -1,46 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="assets/style.css">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zip Up Purple Hoodie | Koldevi</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zip Up Purple Hoodie | Koldevi</title>
+  <link rel="icon" href="assets/favico.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
+  <header class="kd-header">
+    <a class="kd-brand" href="index.html">KOLDEVI</a>
+    <button class="kd-cart snipcart-checkout" aria-label="Open cart">Cart</button>
+  </header>
 
-<a href="index.html">Back to Shop</a>
+  <main class="product-page">
+    <section class="snap-section" style="background-image:url('assets/front-zip-up-purple-logo.png')"></section>
+  </main>
 
-<h1>Zip Up Purple Hoodie</h1>
+  <div class="sticky-info">
+    <div>
+      <div class="prod-title">Zip Up Purple Hoodie</div>
+      <div class="prod-price">$75</div>
+    </div>
+    <form class="snipcart-add-item" 
+          data-item-id="zip-up-purple"
+          data-item-name="Zip Up Purple Hoodie"
+          data-item-price="75"
+          data-item-url="zip-up-purple.html"
+          data-item-description="Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.">
+      <label class="size-select">Size
+        <select name="size">
+          <option value="Small">Small</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="Large">Large</option>
+        </select>
+      </label>
+      <input type="number" name="quantity" value="1" min="1" class="qty-input" />
+      <button type="submit" class="btn-add">Add to cart</button>
+    </form>
+  </div>
 
-<div class="product-images">
-  <img src="assets/front-zip-up-purple-logo.png" alt="Front Purple Hoodie">
-  <!-- add back image if available -->
-</div>
-
-<p>Price: $75</p>
-
-<p>Description: Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.</p>
-
-<form class="snipcart-add-item"
-      data-item-id="zip-up-purple"
-      data-item-name="Zip Up Purple Hoodie"
-      data-item-price="75"
-      data-item-url="zip-up-purple.html"
-      data-item-description="Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.">
-  Size:
-  <select name="size">
-    <option value="Small">Small</option>
-    <option value="Medium">Medium</option>
-    <option value="Large">Large</option>
-  </select>
-  Quantity:
-  <input type="number" name="quantity" value="1" min="1">
-  <button type="submit">Add to Cart</button>
-</form>
-
-<script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
-
+  <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+  <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 </body>
 </html>
