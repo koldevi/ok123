@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="assets/style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Favicon -->
@@ -65,54 +66,34 @@ nav a:hover {
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 16px;
+  display: flex;
+  flex-direction: column; /* makes them stack vertically */
+  align-items: center; /* centers items horizontally */
+  gap: 30px; /* space between items */
+  margin-top: 40px;
 }
 
 .product {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    overflow: hidden;
-}
-
-.product:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-}
-
-.product a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: 12px;
+  text-align: center;
 }
 
 .product img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    display: block;
+  width: 250px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.product h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 4px 0;
-    color: #111;
+.product img:hover {
+  transform: scale(1.05);
 }
 
 .product p {
-    font-size: 13px;
-    color: #666;
-    margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #333;
 }
+
 
 .product button {
     width: calc(100% - 24px);
@@ -209,9 +190,6 @@ footer {
     </button>
   </div>
 </section>
-<footer>
-    &copy; 1900KOLDEVI
-</footer>
 
 <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
 <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
