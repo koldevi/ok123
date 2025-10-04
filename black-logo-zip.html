@@ -1,14 +1,30 @@
-<h1>Black Logo Zip Up Hoodie</h1><script>
-  if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
-    window.location.href = "/";
-  }
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Logo Zip Up Hoodie</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+<style>
+body { font-family: 'Poppins', sans-serif; margin:0; padding:20px; text-align:center; }
+img { max-width: 350px; width:100%; height:auto; margin:20px auto; display:block; }
+h1 { margin-bottom:10px; }
+p { margin:10px 0; }
+select, input[type="number"] { padding:8px; margin:10px 5px; font-size:16px; }
+button { background:#000; color:#fff; border:none; padding:12px 20px; font-size:16px; cursor:pointer; font-weight:600; transition:all 0.3s; }
+button:hover { background:#fff; color:#000; border:1px solid #000; }
+a { display:inline-block; margin-top:20px; text-decoration:none; color:#000; font-weight:600; }
+</style>
+</head>
+<body>
 
+<h1>Black Logo Zip Up Hoodie</h1>
 <img src="assets/black logo zip up.png" alt="Front Black Hoodie">
-<img src="assets/back zip up gray.png" alt="Back Gray Hoodie">
+<img src="assets/back black zip up.png" alt="Back Black Hoodie">
 
 <p>Price: $85</p>
-<p>Description: Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.</p>
+<p>Description: Premium black zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.</p>
 
 <form>
 <label for="size-black">Size:</label>
@@ -27,15 +43,22 @@
         data-item-name="Black Logo Zip Up Hoodie"
         data-item-price="85"
         data-item-url="black-logo-zip.html"
-        data-item-description="Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style."
+        data-item-description="Premium black zip-up hoodie with soft fabric, modern fit, and signature Koldevi style."
         data-item-quantity="1"
         data-item-custom1-name="Size"
         data-item-custom1-options="S|M|L">
   Add to Cart
 </button>
 
+<a href="index.html">Back to Shop</a>
+
 <script>
 const qtyBlack = document.getElementById('quantity-black');
 const btnBlack = document.querySelector('.snipcart-add-item');
 qtyBlack.addEventListener('change', () => btnBlack.setAttribute('data-item-quantity', qtyBlack.value));
 </script>
+
+<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+<script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+</body>
+</html>
