@@ -1,0 +1,41 @@
+<h1>Black Logo Zip Up Hoodie</h1><script>
+  if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+    window.location.href = "/";
+  }
+</script>
+
+<img src="assets/black logo zip up.png" alt="Front Black Hoodie">
+<img src="assets/back zip up gray.png" alt="Back Gray Hoodie">
+
+<p>Price: $85</p>
+<p>Description: Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.</p>
+
+<form>
+<label for="size-black">Size:</label>
+<select id="size-black" name="size">
+  <option value="S">Small</option>
+  <option value="M">Medium</option>
+  <option value="L">Large</option>
+</select>
+
+<label for="quantity-black">Quantity:</label>
+<input type="number" id="quantity-black" name="quantity" value="1" min="1">
+</form>
+
+<button class="snipcart-add-item"
+        data-item-id="black-logo-hoodie"
+        data-item-name="Black Logo Zip Up Hoodie"
+        data-item-price="85"
+        data-item-url="black-logo-zip.html"
+        data-item-description="Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style."
+        data-item-quantity="1"
+        data-item-custom1-name="Size"
+        data-item-custom1-options="S|M|L">
+  Add to Cart
+</button>
+
+<script>
+const qtyBlack = document.getElementById('quantity-black');
+const btnBlack = document.querySelector('.snipcart-add-item');
+qtyBlack.addEventListener('change', () => btnBlack.setAttribute('data-item-quantity', qtyBlack.value));
+</script>
