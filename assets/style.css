@@ -115,3 +115,12 @@ footer {
     font-size: 12px;
     color: #666;
 }
+/* ===== Fix Product Page Add to Cart Button ===== */
+.snipcart-add-item {
+    width: auto;        /* let button size itself */
+    max-width: 240px;   /* prevent stretching too wide */
+    display: block;     /* keep on its own line */
+    margin: 10px auto;  /* center button */
+    padding: 10px 16px; /* comfortable padding */
+    box-sizing: border-box;
+}
