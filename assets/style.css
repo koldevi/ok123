@@ -1,0 +1,117 @@
+/* ===== Global Styles ===== */
+body {
+    background: #fafafa;
+    color: #222;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Links ===== */
+a, a:visited {
+    color: #000;           /* black links */
+    text-decoration: none;  /* no underline */
+}
+a:hover {
+    color: #555;           /* subtle hover */
+}
+
+/* ===== Header ===== */
+header {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.logo img {
+    height: 86px;
+    display: block;
+    margin: 0 auto;
+}
+
+nav a {
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+/* ===== Buttons (cart, Snipcart, product buttons) ===== */
+button, .cart-btn, .snipcart-add-item {
+    background: #000;       /* black */
+    color: #fff;            /* white text */
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover, .cart-btn:hover, .snipcart-add-item:hover {
+    background: #fff;       /* invert on hover */
+    color: #000;
+}
+
+/* ===== Front page products (vertical layout) ===== */
+.products {
+    display: flex;
+    flex-direction: column;  /* stacked vertically */
+    align-items: center;
+    gap: 30px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+/* ===== Individual product card ===== */
+.product {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+    width: 240px;   /* fixed card width */
+}
+
+.product:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.product h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 0;
+    color: #111;
+}
+
+.product p {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 6px;
+}
+
+/* ===== Product page images ===== */
+.product-images img {
+    width: 300px;       /* desktop width */
+    max-width: 100%;    /* shrink on mobile */
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: block;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #666;
+}
