@@ -4,12 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi - Shop</title>
+
+<!-- Favicon -->
+<link rel="icon" href="assets/favico.png" type="image/png">
+
+<!-- Styles -->
 <link rel="stylesheet" href="assets/style.css">
+
+<!-- Snipcart CSS -->
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" />
 </head>
 <body>
 
 <header class="kd-header">
-  <a href="index.html" class="kd-brand">KOLDEVI</a>
+  <a href="index.html" class="kd-brand"><img src="assets/logo.png" alt="Koldevi Logo" style="height:40px;"></a>
   <nav>
     <a href="index.html">Shop</a> |
     <a href="landing-password.html">Landing</a> |
@@ -18,38 +26,68 @@
   </nav>
 </header>
 
-<main style="padding-top:80px;"> <!-- to offset fixed header -->
+<main style="padding-top:80px;">
   <h1 style="text-align:center; margin-bottom:30px;">Shop Koldevi</h1>
 
-  <div class="product-card">
-  <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
-  <h2>Zip Up Red</h2>
-  <div class="price">$75</div>
-  <button>Add to Cart</button>
-  <a href="zip-up-red.html" class="view-product">View Product</a>
-</div>
+  <div class="product-grid">
 
-<div class="product-card">
-  <img src="assets/front-zip-up-purple-logo.png" alt="Zip Up Purple Hoodie">
-  <h2>Zip Up Purple</h2>
-  <div class="price">$75</div>
-  <button>Add to Cart</button>
-  <a href="zip-up-purple.html" class="view-product">View Product</a>
-</div>
+    <div class="product-card">
+      <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
+      <h2>Zip Up Red</h2>
+      <div class="price">$75</div>
+      <button class="snipcart-add-item"
+              data-item-id="zip-up-red"
+              data-item-name="Zip Up Red"
+              data-item-price="75"
+              data-item-url="index.html"
+              data-item-description="Red zip-up hoodie">
+          Add to Cart
+      </button>
+      <a href="zip-up-red.html" class="view-product">View Product</a>
+    </div>
 
-<div class="product-card">
-  <img src="assets/black-logo-zip-up.png" alt="Black Logo Zip">
-  <h2>Black Logo Zip</h2>
-  <div class="price">$75</div>
-  <button>Add to Cart</button>
-  <a href="black-logo-zip.html" class="view-product">View Product</a>
-</div>
+    <div class="product-card">
+      <img src="assets/front-zip-up-purple-logo.png" alt="Zip Up Purple Hoodie">
+      <h2>Zip Up Purple</h2>
+      <div class="price">$75</div>
+      <button class="snipcart-add-item"
+              data-item-id="zip-up-purple"
+              data-item-name="Zip Up Purple"
+              data-item-price="75"
+              data-item-url="index.html"
+              data-item-description="Purple zip-up hoodie">
+          Add to Cart
+      </button>
+      <a href="zip-up-purple.html" class="view-product">View Product</a>
+    </div>
 
+    <div class="product-card">
+      <img src="assets/black-logo-zip-up.png" alt="Black Logo Zip">
+      <h2>Black Logo Zip</h2>
+      <div class="price">$75</div>
+      <button class="snipcart-add-item"
+              data-item-id="black-logo-zip"
+              data-item-name="Black Logo Zip"
+              data-item-price="75"
+              data-item-url="index.html"
+              data-item-description="Black zip-up hoodie">
+          Add to Cart
+      </button>
+      <a href="black-logo-zip.html" class="view-product">View Product</a>
+    </div>
+
+  </div>
 </main>
 
 <footer style="text-align:center; padding:20px; margin-top:40px; border-top:1px solid #000;">
   <p>© 2025 Koldevi</p>
 </footer>
+
+<!-- Snipcart div -->
+<div id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz" hidden></div>
+
+<!-- Snipcart JS -->
+<script async src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
 
 </body>
 </html>
