@@ -1,4 +1,104 @@
-/* ===== Product Page Responsive Fix ===== */
+/* === KOLDEVI PRODUCT PAGE RESTORED STYLE === */
+
+/* Base */
+:root {
+  --bg: #fff;
+  --text: #0a0a0a;
+  --muted: #777;
+  --accent: #000;
+}
+
+/* Global */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  padding-bottom: 240px; /* space for sticky */
+}
+
+/* Header */
+.kd-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: transparent;
+  z-index: 60;
+}
+.kd-brand {
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 18px;
+}
+.kd-cart {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Homepage products */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 100px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.product-card {
+  flex: 0 1 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+.product-card img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.product-card h2 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+}
+.product-card .price {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.view-product {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.view-product:hover {
+  opacity: 0.7;
+}
+
+/* === Product Page === */
 .product-page {
   height: auto;
   min-height: 100vh;
@@ -7,40 +107,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 80px 20px;
-  box-sizing: border-box;
+  padding: 100px 20px 80px;
 }
-
-/* Product images */
-.product-page img {
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.product-gallery img {
   width: 100%;
-  max-width: 420px;   /* tighter for PC */
+  max-width: 400px;
   height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto 20px auto;
 }
 
-/* Fix for multiple images (show stacked) */
-.product-gallery, .product-images {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-/* View Product link fix */
-.view-product {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-.view-product:hover {
-  opacity: 0.7;
-}
-
-/* Sticky cart/info */
+/* Sticky info */
 .sticky-info {
   position: fixed;
   bottom: 20px;
@@ -50,33 +133,61 @@
   padding: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   width: 280px;
-  z-index: 100;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sticky-info .prod-title {
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+.sticky-info .prod-price {
+  color: var(--muted);
+  font-weight: 700;
+  text-align: center;
+}
+.sticky-info select, .sticky-info input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.sticky-info button {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sticky-info button:hover {
+  background: #333;
 }
 
-/* Make sure page can scroll under sticky */
-body {
-  padding-bottom: 280px;
-}
-
-/* ---- Responsive for PC ---- */
-@media (min-width: 900px) {
-  .product-page img {
-    max-width: 340px; /* slightly smaller */
-  }
-  .product-gallery {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .sticky-info {
-    right: 40px;
-    bottom: 40px;
-  }
-}
-
-/* ---- Snipcart Fix ---- */
+/* Snipcart fix */
 .snipcart-modal, .snipcart-cart {
   border-radius: 12px;
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
+  background: #fff;
+  color: #000;
+  font-family: inherit;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .product-gallery img {
+    max-width: 100%;
+  }
+  .sticky-info {
+    right: 10px;
+    left: 10px;
+    width: auto;
+    bottom: 12px;
+  }
 }
