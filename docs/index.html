@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Koldevi - Home</title>
 
 <!-- Favicon -->
@@ -13,22 +12,30 @@
 <link rel="stylesheet" href="assets/style.css">
 
 <!-- Snipcart CSS -->
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" />
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 
-<!-- Cart Modal Fix -->
+<!-- Cart Drawer Fix -->
 <style>
-/* Center modal and constrain width */
-.snipcart-modal__wrapper {
-  max-width: 600px !important;
-  width: calc(100% - 32px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+.snipcart-modal {
+  right: 0 !important;
+  left: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 450px !important;
+  max-width: 90% !important;
   border-radius: 12px !important;
   overflow: hidden;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
 }
 
-/* Add Koldevi logo at top of modal */
-.snipcart-modal__wrapper::before {
+.snipcart-modal__content {
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  padding: 16px !important;
+  box-sizing: border-box;
+}
+
+.snipcart-modal__header::before {
   content: "";
   display: block;
   height: 80px;
@@ -37,85 +44,88 @@
   margin-bottom: 16px;
 }
 
-/* Scrollable content inside modal */
-.snipcart-modal__content {
-  max-height: calc(80vh - 80px) !important;
-  overflow-y: auto !important;
-  padding: 16px !important;
-  box-sizing: border-box;
-}
-
-/* Mobile: full width with padding */
-@media (max-width: 640px) {
-  .snipcart-modal__wrapper {
-    width: calc(100% - 24px) !important;
-    left: 12px !important;
-    transform: none !important;
-  }
-}
-
-/* Buttons and links inside cart */
 .snipcart-modal button,
 .snipcart-modal a {
   font-family: inherit;
   border-radius: 6px;
 }
+
+@media (max-width: 640px) {
+  .snipcart-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
 </style>
 </head>
 <body>
 
+<header class="kd-header">
+  <img src="assets/logo.png" class="kd-logo" alt="Koldevi Logo">
+  <button class="kd-cart snipcart-checkout">Cart</button>
+</header>
+
 <main>
   <div class="products">
+
+    <!-- V1 Red Hoodie -->
     <div class="product-card">
       <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
       <button class="snipcart-add-item"
               data-item-id="zip-up-red"
-              data-item-name="Zip Up Red"
+              data-item-name="V1 - Zip Up Red Hoodie"
               data-item-price="75"
               data-item-url="zip-up-red.html"
-              data-item-description="Red zip-up hoodie">
+              data-item-description="Premium red zip-up hoodie.">
           Add to Cart
       </button>
       <a href="zip-up-red.html" class="view-product">View Product</a>
     </div>
 
+    <!-- V2 Purple Hoodie -->
     <div class="product-card">
       <img src="assets/front-zip-up-purple-logo.png" alt="Zip Up Purple Hoodie">
       <button class="snipcart-add-item"
               data-item-id="zip-up-purple"
-              data-item-name="Zip Up Purple"
+              data-item-name="V2 - Zip Up Purple Hoodie"
               data-item-price="75"
               data-item-url="zip-up-purple.html"
-              data-item-description="Purple zip-up hoodie">
+              data-item-description="Premium purple zip-up hoodie.">
           Add to Cart
       </button>
       <a href="zip-up-purple.html" class="view-product">View Product</a>
     </div>
 
+    <!-- V3 Black Logo Hoodie -->
     <div class="product-card">
       <img src="assets/black-logo-zip-up.png" alt="Black Logo Zip">
       <button class="snipcart-add-item"
               data-item-id="black-logo-zip"
-              data-item-name="Black Logo Zip"
-              data-item-price="75"
+              data-item-name="V3 - Black Logo Zip Up Hoodie"
+              data-item-price="85"
               data-item-url="black-logo-zip.html"
-              data-item-description="Black zip-up hoodie">
+              data-item-description="Premium black zip-up hoodie.">
           Add to Cart
       </button>
       <a href="black-logo-zip.html" class="view-product">View Product</a>
     </div>
+
   </div>
 </main>
 
 <footer>
-  <p>1900KOLDVI</p>
+  <p>© 1900 Koldevi</p>
 </footer>
 
-<!-- Snipcart div -->
-<div id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz" hidden></div>
+<script>
+window.SnipcartSettings = {
+  publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
+  loadStrategy: 'immediate'
+};
+</script>
 
-<!-- Snipcart JS -->
-<script async src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script><body>
+<script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
 
 </body>
 </html>

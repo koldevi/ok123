@@ -194,3 +194,16 @@ footer {
 }
 
 
+/* Snipcart drawer adjustments */
+.snipcart-modal {
+    right: 0 !important;
+    left: auto !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    max-width: 450px; /* adjust width to fit your aesthetic */
+}
+
+.snipcart-modal__container {
+    border-radius: 12px;
+    overflow: auto;
+}

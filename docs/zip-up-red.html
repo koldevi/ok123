@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V1 - Zip Up Red Hoodie | Koldevi</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head><!-- Favicon -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V1 - Zip Up Red Hoodie | Koldevi</title>
+
+<!-- Favicon -->
 <link rel="icon" href="assets/favico.png" type="image/png">
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/style.css">
+
+<!-- Snipcart CSS -->
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+
+<!-- Cart Drawer & Modal Fix -->
+<style>
+.snipcart-modal {
+  right: 0 !important;
+  left: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 450px !important;
+  max-width: 90% !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+}
+
+.snipcart-modal__content {
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  padding: 16px !important;
+  box-sizing: border-box;
+}
+
+.snipcart-modal__header::before {
+  content: "";
+  display: block;
+  height: 80px;
+  background: url('assets/logo.png') center center no-repeat;
+  background-size: contain;
+  margin-bottom: 16px;
+}
+
+.snipcart-modal button,
+.snipcart-modal a {
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .snipcart-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+</style>
+</head>
 <body>
 
 <header class="kd-header">
@@ -51,11 +102,18 @@
 </main>
 
 <footer style="text-align:center; padding:20px; margin-top:40px; border-top:1px solid #000;">
-  <p>© 1900</p>
+  <p>© 1900 Koldevi</p>
 </footer>
 
-<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+<script>
+window.SnipcartSettings = {
+  publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
+  loadStrategy: 'immediate'
+};
+</script>
+
 <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
 
 </body>
 </html>
