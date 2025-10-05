@@ -209,3 +209,76 @@ footer {
         max-width: 480px;  /* keep it consistent on large screens */
     }
 }
+/* ===== Snipcart Cart Styling ===== */
+.snipcart__container {
+    max-width: 480px !important;
+    margin: 40px auto !important;
+    padding: 20px !important;
+    border-radius: 8px;
+}
+
+.snipcart-cart__header,
+.snipcart-cart__footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.snipcart-cart__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.snipcart-cart__item-image img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.snipcart-cart__item-content {
+    flex: 1;
+    text-align: left;
+}
+
+.snipcart-cart__item-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.snipcart-cart__item-description {
+    font-size: 12px;
+    color: #666;
+}
+
+.snipcart-cart__item-quantity {
+    margin-top: 6px;
+}
+
+.snipcart-cart__item-total-price {
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.snipcart-cart__footer-subtotal,
+.snipcart-cart__footer-total {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.snipcart-cart__footer button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* Make sure modal content scrolls on small screens */
+.snipcart__container {
+    max-height: 90vh;
+    overflow-y: auto;
+}
