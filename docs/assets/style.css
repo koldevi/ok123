@@ -137,39 +137,6 @@ footer {
   background: #fff;
 }
 
-/* ===== Snipcart Modal Fix ===== */
-.snipcart-modal__content {
-  max-width: 600px !important;       /* modal width */
-  margin: 40px auto !important;       /* center horizontally */
-  border-radius: 12px !important;
-  overflow: hidden;
-}
-
-.snipcart-modal__body {
-  padding: 20px !important;
-}
-
-.snipcart-modal__header,
-.snipcart-modal__footer {
-  padding: 10px 20px !important;
-}
-
-.snipcart__item__title,
-.snipcart__item__price,
-.snipcart__item__quantity {
-  font-size: 14px !important;
-}
-
-.snipcart-modal {
-  bottom: auto !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important; /* vertical center */
-}
-
-.snipcart-modal__overlay {
-  background-color: rgba(0,0,0,0.6) !important; /* dark overlay */
-}
-
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   .products {
@@ -184,10 +151,21 @@ footer {
   .product-gallery img {
     max-width: 90%;
   }
-
-  /* Snipcart modal mobile adjustments */
-  .snipcart-modal__content {
-    width: 90% !important;
-    margin: 20px auto !important;
-  }
 }
+
+/* ===== Snipcart Modal Fix ===== */
+.snipcart-modal__container {
+    max-width: 600px !important;  /* modal max width */
+    width: 90% !important;        /* scales down on smaller screens */
+    margin: auto !important;      /* centers horizontally */
+}
+
+.snipcart-modal__content {
+    max-height: 80vh !important;  /* prevents modal from exceeding screen height */
+    overflow-y: auto !important;  /* makes content scrollable */
+}
+
+.snipcart-modal__overlay {
+    background-color: rgba(0,0,0,0.6) !important; /* optional: dark overlay */
+}
+
