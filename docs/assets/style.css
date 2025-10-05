@@ -22,24 +22,26 @@ header img {
   width: 130px;
   height: auto;
 }
+
 /* Header logo */
 .kd-logo {
-    height: 40px;       /* adjust as needed */
-    object-fit: contain;
-    display: block;
+  height: 40px;       /* adjust as needed */
+  object-fit: contain;
+  display: block;
 }
+
 .kd-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 72px;
-    background: transparent; /* keeps it clean */
-    z-index: 60;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: transparent; /* keeps it clean */
+  z-index: 60;
 }
 
 /* Hide header/logo on product pages */
@@ -96,15 +98,16 @@ header img {
 }
 
 /* ===== Buttons / Links ===== */
-.snipcart-add-item,
-.view-product {
+
+/* Add to Cart Button */
+.snipcart-add-item {
   display: block;
   width: 100%;
   max-width: 200px;
   margin: 10px auto 0;
   padding: 9px 0;
-  background: none;
-  color: #0000 !important;
+  background: #000;       /* black background */
+  color: #fff !important; /* white text */
   border: none;
   border-radius: 6px;
   font-size: 14px;
@@ -115,11 +118,25 @@ header img {
   transition: background 0.3s ease;
 }
 
-.snipcart-add-item:hover,
-.view-product:hover {
-  background: #222;
+.snipcart-add-item:hover {
+  background: #111; /* slightly darker on hover */
 }
 
+/* View Product Link */
+.view-product {
+  display: inline-block;
+  background: none;       /* no background */
+  color: #000 !important; /* black text */
+  text-decoration: none !important;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.view-product:hover {
+  text-decoration: underline; /* optional hover effect */
+}
+
+/* ===== General Links ===== */
 a,
 a:visited,
 a:hover {
@@ -181,5 +198,3 @@ a:hover {
     overflow-y: auto;
   }
 }
-
-
