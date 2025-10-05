@@ -210,3 +210,20 @@ footer {
     border-radius: 12px;
     overflow: auto;
 }
+/* Fix unclickable buttons / elements */
+.products,
+.product-card,
+.view-product,
+.snipcart-add-item {
+  position: relative;
+  z-index: 10;
+}
+
+.kd-header {
+  pointer-events: none; /* prevents header from blocking clicks */
+}
+
+.kd-header img,
+.kd-header a {
+  pointer-events: auto; /* keep logo clickable */
+}
