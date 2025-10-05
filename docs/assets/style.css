@@ -1,3 +1,4 @@
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,101 +7,114 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fff;
+  background: #fff;
   color: #000;
   text-align: center;
   overflow-x: hidden;
 }
 
+/* ===== Header ===== */
 header {
-  padding: 20px 0;
+  padding: 15px 0 10px;
 }
 
 header img {
-  width: 140px;
+  width: 130px;
   height: auto;
 }
 
-/* Product grid */
+/* ===== Products ===== */
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  padding: 10px 0 50px;
+  gap: 12px;
+  padding: 10px 10px 50px;
 }
 
-/* Product card */
+/* ===== Product Card ===== */
 .product-card {
-  width: 280px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 10px;
+  width: 240px;
   background: #fff;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  padding: 12px;
   text-align: center;
+  transition: all 0.25s ease;
 }
 
 .product-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .product-card img {
   width: 100%;
-  max-width: 250px;
+  max-width: 220px;
+  height: auto;
   border-radius: 8px;
+  display: block;
+  margin: 0 auto 8px;
   object-fit: cover;
   pointer-events: none;
 }
 
 .product-card h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  margin: 10px 0 6px;
+  margin-bottom: 6px;
 }
 
 .product-card p {
-  font-size: 15px;
+  font-size: 14px;
   color: #555;
 }
 
+/* ===== Button ===== */
 .snipcart-add-item {
   display: block;
-  margin: 15px auto 0;
   width: 100%;
-  max-width: 240px;
+  max-width: 200px;
+  margin: 10px auto 0;
+  padding: 9px 0;
   background: #000;
   color: #fff;
   border: none;
-  padding: 10px 0;
   border-radius: 6px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .snipcart-add-item:hover {
-  background: #111;
+  background: #222;
 }
 
 a, button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Mobile fix */
+/* ===== Mobile Fix ===== */
 @media (max-width: 768px) {
-  .product-card {
-    width: 90%;
-    max-width: 300px;
+  .products {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
   }
 
-  .product-card img {
-    max-width: 100%;
+  .product-card {
+    width: 90%;
+    max-width: 280px;
   }
 
   header img {
-    width: 120px;
+    width: 100px;
+  }
+
+  body {
+    overflow-y: auto;
   }
 }
+
