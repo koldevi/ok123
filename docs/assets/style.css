@@ -33,7 +33,7 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
 .view-product{display:inline-block;margin-left:12px;text-decoration:none;color:var(--text);font-weight:600;opacity:0.9}
 
 /* ==== Homepage products ==== */
-./* Product grid - center and smaller */
+/* Product grid - center and smaller */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
@@ -84,15 +84,25 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
 }
 
 
-/* ==== Product page ==== */
-.product-page{
-  height:100vh;
-  overflow-y:scroll;
-  scroll-snap-type:y mandatory;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  padding:60px 20px;
+//* ==== Product page ==== */
+.product-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
+  padding: 80px 20px 60px;
+  background: #fff;
+  text-align: center;
+}
+.product-page img {
+  max-width: 400px;
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 20px 0;
+}
 }
 .snap-section{height:100vh;background-size:cover;background-position:center;scroll-snap-align:start;position:relative}
 
