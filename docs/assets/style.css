@@ -1,225 +1,98 @@
-/* ===========================
-   KOLDEVI FULL RESPONSIVE STYLE
-   =========================== */
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  color: #000;
-  background-color: #fff;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-/* HEADER */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 40px;
-}
-
-header .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-header nav {
-  display: flex;
-  gap: 25px;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  transition: 0.2s ease;
-}
-
-header nav a:hover {
-  color: #ff5c8d;
-}
-
-/* HOME PRODUCTS GRID */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  padding: 120px 40px 60px;
-}
-
-.product-card {
-  text-align: center;
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  object-fit: contain;
-}
-
-.product-card h3 {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-
-.product-card p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.snipcart-add-item {
-  display: block;
-  width: 100%;
-  max-width: 240px;
-  margin: 10px auto 0;
-  padding: 10px 16px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.snipcart-add-item:hover {
-  background: #ff5c8d;
-}
-
-/* FOOTER */
-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
-}
-
-/* ===========================
-   PRODUCT PAGE
-   =========================== */
+/* -------------------- Product Page / Image Fixes -------------------- */
 .product-page {
+  height: auto !important;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: visible !important;
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 100px 20px 160px; /* header + sticky cart spacing */
+  padding: 80px 20px 300px 20px; /* leave space for sticky cart/info */
   box-sizing: border-box;
-  background: #fff;
 }
 
 .snap-section, .product-gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 24px;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.snap-section img, 
+.snap-section img,
 .product-gallery img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
+  width: auto !important;
+  max-width: 90%;
+  height: auto !important;
+  max-height: calc(80vh - 220px);
   object-fit: contain;
-  border-radius: 10px;
-}
-
-/* Gallery: stack column on mobile, row on wider screens */
-.product-gallery {
-  flex-direction: column;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (min-width: 900px) {
   .product-gallery {
     flex-direction: row;
-    gap: 24px;
+    align-items: flex-start;
     justify-content: center;
   }
-
+  .snap-section img,
   .product-gallery img {
     max-width: 48%;
   }
 }
 
-/* Minimum image container height */
-.snap-section .image, 
-.product-gallery .image {
-  min-height: 220px;
-}
-
-/* STICKY INFO / CART */
+/* -------------------- Sticky Info / Cart Fixes -------------------- */
 .sticky-info {
-  position: sticky;
+  --sticky-height: 220px;
+  position: fixed !important;
+  right: 0;
   bottom: 20px;
-  z-index: 50;
-  width: 100%;
-  max-width: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 14px;
+  left: 0;
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  max-width: 660px;
+  z-index: 9999;
+  padding: 12px;
+  border-radius: 12px;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
-.sticky-info button {
-  width: 100%;
-  padding: 10px 0;
-  border: none;
-  border-radius: 6px;
-  background: #000;
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 12px;
+.product-page {
+  padding-bottom: calc(var(--sticky-height, 220px) + 32px);
 }
 
-.sticky-info button:hover {
-  background: #ff5c8d;
+/* -------------------- Snipcart / Cart Modal Fix -------------------- */
+.snipcart-modal,
+.snipcart-modal__content,
+.snipcart-checkout,
+.snipcart-cart,
+.snipcart-modal__wrapper,
+.snipcart__cart__inner {
+  max-width: 940px;
+  width: calc(100% - 48px);
+  margin: 0 auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  font-family: inherit;
+  color: #111;
 }
 
-/* SNIPCART MODAL FIXES */
 .snipcart-modal__content,
 .snipcart-checkout,
 .snipcart-cart {
-  max-width: 600px !important;
-  margin: 40px auto !important;
-  border-radius: 12px;
+  max-height: 92vh;
   overflow-y: auto;
-  max-height: 90vh;
+  padding: 24px;
 }
 
 .snipcart-modal button,
@@ -230,37 +103,44 @@ footer {
   border-radius: 6px;
 }
 
-html.snipcart-modal-open,
-body.snipcart-modal-open {
-  overflow-x: hidden;
-  overflow-y: auto;
+/* -------------------- Button / View Product Fix -------------------- */
+button.snipcart-add-item,
+.view-product {
+  text-decoration: none !important;
+  color: #000 !important;
+  background: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
 }
 
-/* ===========================
-   RESPONSIVE FIXES
-   =========================== */
+button.snipcart-add-item:hover,
+.view-product:hover {
+  background: #333;
+  color: #fff !important;
+}
+
+/* -------------------- Responsive Adjustments -------------------- */
 @media (max-width: 700px) {
-  header {
-    padding: 14px 20px;
-  }
-
-  .product-card {
-    padding: 12px;
-  }
-
-  .product-gallery img,
-  .snap-section img {
-    max-width: 90%;
-  }
-
-  .sticky-info {
-    max-width: 95%;
-    left: 2.5%;
-    right: 2.5%;
-  }
-
-  .products {
-    padding: 100px 20px 60px;
+  .snap-section, .product-gallery {
+    flex-direction: column;
     gap: 16px;
+    padding: 20px;
+  }
+  .snap-section img,
+  .product-gallery img {
+    max-width: 90%;
+    max-height: 60vh;
+  }
+  .sticky-info {
+    width: calc(100% - 24px);
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px;
+    transform: none !important;
   }
 }
