@@ -14,72 +14,100 @@
 <!-- Snipcart CSS -->
 <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 
-<!-- Cart Drawer Fix -->
 <style>
-.snipcart-modal {
-  right: 0 !important;
-  left: auto !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 450px !important;
-  max-width: 90% !important;
-  border-radius: 12px !important;
-  overflow: hidden;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
-}
-
-.snipcart-modal__content {
-  max-height: 80vh !important;
-  overflow-y: auto !important;
-  padding: 16px !important;
-  box-sizing: border-box;
-}
-
-.snipcart-modal__header::before {
-  content: "";
-  display: block;
-  height: 80px;
-  background: url('assets/logo.png') center center no-repeat;
-  background-size: contain;
-  margin-bottom: 16px;
-}
-
-.snipcart-modal button,
-.snipcart-modal a {
-  font-family: inherit;
-  border-radius: 6px;
-}
-
-@media (max-width: 640px) {
-  .snipcart-modal {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-
-/* === FIX: Make Add to Cart + View Product clickable === */
-.product-card,
-.snipcart-add-item,
-.view-product {
-  position: relative !important;
-  z-index: 5 !important;
-  pointer-events: auto !important;
+/* --- Fix layering & clicks --- */
+body, html {
+  position: relative;
+  overflow-x: hidden;
 }
 
 .kd-header {
-  z-index: 10 !important;
-  pointer-events: auto !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 72px;
+  background: transparent;
+  z-index: 1000; /* Above everything */
+}
+
+.kd-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.kd-cart {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 100px 10px 60px;
+}
+
+.product-card {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.product-card img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.snipcart-add-item {
+  display: inline-block;
+  margin: 8px auto;
+  padding: 8px 16px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.snipcart-add-item:hover {
+  background: #111;
 }
 
 .view-product {
-  background: none !important;
+  display: inline-block;
+  margin: 8px auto;
   color: #000 !important;
   text-decoration: none !important;
   border: none !important;
+  background: none !important;
+  z-index: 10;
+  position: relative;
 }
 
 .view-product:hover {
   text-decoration: underline !important;
+}
+
+/* Make sure Snipcart modal shows on top */
+#snipcart {
+  position: fixed !important;
+  z-index: 9999 !important;
 }
 </style>
 </head>
@@ -155,7 +183,6 @@ window.SnipcartSettings = {
 </script>
 
 <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-
 <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
 
 </body>
