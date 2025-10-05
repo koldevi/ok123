@@ -1,57 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>V2 - Zip Up Purple Hoodie | Koldevi</title>
+
   <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    :root{--max-width:1200px}
+    body{margin:0;font-family:'Poppins',sans-serif;background:#fff;color:#000}
+    .product-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 16px 120px;box-sizing:border-box}
+    .product-gallery{width:100%;max-width:var(--max-width);display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center}
+    .product-gallery img{width:100%;max-width:560px;height:auto;object-fit:contain;border-radius:10px;display:block;margin:0 auto}
+    @media(min-width:900px){ .product-gallery{flex-direction:row;gap:24px} .product-gallery img{max-width:48%} }
+
+    .sticky-info{position:fixed;right:20px;bottom:20px;width:280px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.08);z-index:60}
+    @media(max-width:860px){ .sticky-info{position:fixed;left:50%;transform:translateX(-50%);right:auto;width:calc(100% - 32px)} }
+
+    .prod-title{font-weight:700;text-align:center;margin-bottom:6px}
+    .prod-price{color:#777;font-weight:700;text-align:center;margin-bottom:10px}
+    .sticky-info select,.sticky-info input{width:100%;padding:8px;border-radius:6px;border:1px solid #e6e6e6;margin-top:8px}
+    .snipcart-add-item{display:block;width:100%;background:#000;color:#fff;border-radius:8px;padding:12px 10px;border:0;font-weight:700;margin-top:12px;cursor:pointer}
+    .snipcart-add-item:hover{background:#222}
+    header.kd-header{display:none!important}
+  </style>
 </head>
 <body>
 
-<header class="kd-header">
-  <a href="index.html" class="kd-brand">KOLDEVI</a>
-  <button class="kd-cart snipcart-checkout">Cart</button>
-</header>
+<main class="product-page" id="product-page">
 
-<main class="product-page">
-
-  <section class="snap-section">
-    <img src="assets/front-zip-up-purple-logo.png" alt="Front Purple Hoodie" style="width:100%;max-width:500px;margin:0 auto;display:block;">
-  </section>
-  <section class="snap-section">
-    <img src="assets/back-zip-up-purple.png" alt="Back Purple Hoodie" style="width:100%;max-width:500px;margin:0 auto;display:block;">
+  <section class="product-gallery" aria-label="Product images">
+    <img src="assets/front-zip-up-purple-logo.png" alt="Purple Zip Up Hoodie — front">
+    <img src="assets/back-zip-up-purple.png" alt="Purple Zip Up Hoodie — back">
   </section>
 
-  <div class="sticky-info">
+  <div style="max-width:900px;margin:18px auto 40px;padding:0 16px;text-align:left">
+    <h1 style="font-size:20px;margin:0 0 8px">V2 — Zip Up Purple Hoodie</h1>
+    <p style="color:#444;line-height:1.5;margin:0 0 8px">
+      Soft, comfortable zip-up hoodie with contrast logo. True-to-size with roomy pockets.
+    </p>
+    <p style="color:#666;font-size:14px;margin:6px 0 0">Material: 80% cotton, 20% polyester. Machine wash cold.</p>
+  </div>
+
+  <aside class="sticky-info" aria-label="Buy box">
     <div class="prod-title">V2 - Zip Up Purple Hoodie</div>
     <div class="prod-price">$75</div>
-    <div class="size-select">
-      Size:
-      <select name="size">
-        <option value="Small">Small</option>
-        <option value="Medium">Medium</option>
-        <option value="Large">Large</option>
-      </select>
-    </div>
-    <div class="qty-input">
-      Quantity:
-      <input type="number" name="quantity" value="1" min="1">
-    </div>
+
+    <label style="display:block;text-align:left;font-size:13px;color:#666;margin-top:6px">Size</label>
+    <select name="size" aria-label="Select size">
+      <option>Small</option>
+      <option selected>Medium</option>
+      <option>Large</option>
+    </select>
+
+    <label style="display:block;text-align:left;font-size:13px;color:#666;margin-top:8px">Quantity</label>
+    <input type="number" name="quantity" value="1" min="1" aria-label="Quantity">
+
     <button class="snipcart-add-item"
-      data-item-id="zip-up-purple"
+      data-item-id="zip-up-purple-v2"
       data-item-name="V2 - Zip Up Purple Hoodie"
       data-item-price="75"
       data-item-url="zip-up-purple.html"
-      data-item-description="Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.">
+      data-item-description="Zip Up Purple Hoodie — Koldevi">
       Add to Cart
     </button>
-  </div>
+  </aside>
 
 </main>
 
 <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
-<script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-
+<script async src="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.js"></script>
 </body>
 </html>
+
 
