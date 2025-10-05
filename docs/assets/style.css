@@ -70,10 +70,11 @@ header {
   object-fit: contain;
 }
 
-.snipcart-add-item {
+.snipcart-add-item,
+.view-product {
   display: inline-block;
   margin: 8px auto;
-  padding: 8px 16px;
+  padding: 10px 18px;
   background: #000;
   color: #fff !important;
   border: none;
@@ -81,14 +82,26 @@ header {
   font-weight: 600;
   cursor: pointer;
   text-transform: uppercase;
-  transition: background 0.3s ease;
-
-  position: relative;  /* ensures it’s above other layers */
-  z-index: 1000;       /* high enough to avoid being blocked */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
 }
 
-.snipcart-add-item:hover {
-  background: #111;
+.snipcart-add-item:hover,
+.view-product:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* Ensure buttons are clickable */
+.card,
+.product-details {
+  position: relative;
+  z-index: 2;
+}
+
+.snipcart-add-item {
+  pointer-events: auto !important;
 }
 
 .view-product {

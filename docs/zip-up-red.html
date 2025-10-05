@@ -1,77 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V1 - Zip Up Red Hoodie | Koldevi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V1 - Zip Up Red Hoodie | Koldevi</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/favico.png" type="image/png">
+</head><!-- Snipcart Cart Icon -->
+<a href="#" class="snipcart-checkout cart-icon" aria-label="Cart">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="black" stroke-width="1.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L3 6v16a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18" />
+  </svg>
+</a>
 
-<!-- Favicon -->
-<link rel="icon" href="assets/favico.png" type="image/png">
-
-<!-- Styles -->
-<link rel="stylesheet" href="assets/style.css">
-
-<!-- Snipcart CSS -->
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
-
-<!-- Cart Drawer & Modal Fix -->
 <style>
-.snipcart-modal {
-  right: 0 !important;
-  left: auto !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 450px !important;
-  max-width: 90% !important;
-  border-radius: 12px !important;
-  overflow: hidden;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+.cart-icon {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9999;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
 }
-
-.snipcart-modal__content {
-  max-height: 80vh !important;
-  overflow-y: auto !important;
-  padding: 16px !important;
-  box-sizing: border-box;
-}
-
-.snipcart-modal__header::before {
-  content: "";
-  display: block;
-  height: 80px;
-  background: url('assets/logo.png') center center no-repeat;
-  background-size: contain;
-  margin-bottom: 16px;
-}
-
-.snipcart-modal button,
-.snipcart-modal a {
-  font-family: inherit;
-  border-radius: 6px;
-}
-
-@media (max-width: 640px) {
-  .snipcart-modal {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
+.cart-icon:hover { transform: scale(1.05); }
+@media (max-width: 768px) {
+  .cart-icon { top: 14px; right: 14px; padding: 5px; }
 }
 </style>
-</head>
+
 <body>
 
 <header class="kd-header">
   <img src="assets/logo.png" class="kd-logo" alt="Koldevi Logo">
-  <button class="kd-cart snipcart-checkout">Cart</button>
+  <div class="kd-cart snipcart-checkout" aria-label="Cart">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black" width="26" height="26">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h15l-1.5 9h-12L6 6zM9 6V4a3 3 0 116 0v2" />
+    </svg>
+    <span class="cart-count snipcart-items-count">0</span>
+  </div>
 </header>
 
 <main class="product-page">
-
-  <section class="snap-section">
-    <img src="assets/front-red-hoodie.png" alt="Front Red Hoodie" style="width:100%;max-width:500px;margin:0 auto;display:block;">
-  </section>
-  <section class="snap-section">
-    <img src="assets/back-red-zip-up.png" alt="Back Red Hoodie" style="width:100%;max-width:500px;margin:0 auto;display:block;">
+  <section class="product-gallery">
+    <img src="assets/front-red-hoodie.png" alt="Front Red Hoodie">
+    <img src="assets/back-red-hoodie.png" alt="Back Red Hoodie">
   </section>
 
   <div class="sticky-info">
@@ -89,31 +64,31 @@
       Quantity:
       <input type="number" name="quantity" value="1" min="1">
     </div>
+
     <button class="snipcart-add-item"
       data-item-id="zip-up-red"
       data-item-name="V1 - Zip Up Red Hoodie"
       data-item-price="75"
-      data-item-url="zip-up-red.html"
-      data-item-description="Premium zip-up hoodie with soft fabric, modern fit, and signature Koldevi style.">
+      data-item-url="/koldevi/zip-up-red.html"
+      data-item-description="Red zip-up hoodie featuring Koldevi’s minimalist streetwear design.">
       Add to Cart
     </button>
   </div>
-
 </main>
 
-<footer style="text-align:center; padding:20px; margin-top:40px; border-top:1px solid #000;">
-  <p>© 1900 Koldevi</p>
+<footer>
+  <p>© 1900KOLDVI</p>
 </footer>
 
+<!-- Snipcart Integration -->
 <script>
-window.SnipcartSettings = {
-  publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
-  loadStrategy: 'immediate'
-};
+  window.SnipcartSettings = {
+    publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
+    loadStrategy: 'immediate'
+  };
 </script>
-
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
-
 </body>
 </html>
