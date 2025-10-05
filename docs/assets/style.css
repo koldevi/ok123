@@ -152,3 +152,42 @@ footer {
     max-width: 90%;
   }
 }
+/* ===== Snipcart Modal Fix ===== */
+#snipcart {
+  font-family: 'Poppins', sans-serif;
+}
+
+.snipcart-modal__wrapper {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 600px !important;
+  width: 90% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  z-index: 9999 !important;
+}
+
+.snipcart-modal__content {
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  padding: 16px !important;
+}
+
+.snipcart-modal button,
+.snipcart-modal a {
+  font-family: inherit !important;
+  border-radius: 6px !important;
+}
+
+@media (max-width: 640px) {
+  .snipcart-modal__wrapper {
+    width: calc(100% - 24px) !important;
+    left: 12px !important;
+    top: 10% !important;
+    transform: none !important;
+  }
+}
+
