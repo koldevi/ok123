@@ -282,3 +282,40 @@ footer {
     max-height: 90vh;
     overflow-y: auto;
 }
+/* ===== Snipcart Cart Overrides ===== */
+#snipcart {
+  font-family: 'Poppins', sans-serif;
+}
+
+.snipcart__container {
+  max-width: 600px !important; /* desktop-friendly width */
+}
+
+.snipcart__cart {
+  font-size: 14px !important;
+}
+
+.snipcart__header,
+.snipcart__footer {
+  font-size: 14px !important;
+}
+
+.snipcart__item__title {
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+.snipcart__item__price,
+.snipcart__item__quantity {
+  font-size: 14px !important;
+}
+
+.snipcart__footer__totals {
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+.snipcart__close {
+  width: 32px !important;
+  height: 32px !important;
+}
