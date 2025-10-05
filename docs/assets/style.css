@@ -137,6 +137,39 @@ footer {
   background: #fff;
 }
 
+/* ===== Snipcart Modal Fix ===== */
+.snipcart-modal__content {
+  max-width: 600px !important;       /* modal width */
+  margin: 40px auto !important;       /* center horizontally */
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.snipcart-modal__body {
+  padding: 20px !important;
+}
+
+.snipcart-modal__header,
+.snipcart-modal__footer {
+  padding: 10px 20px !important;
+}
+
+.snipcart__item__title,
+.snipcart__item__price,
+.snipcart__item__quantity {
+  font-size: 14px !important;
+}
+
+.snipcart-modal {
+  bottom: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important; /* vertical center */
+}
+
+.snipcart-modal__overlay {
+  background-color: rgba(0,0,0,0.6) !important; /* dark overlay */
+}
+
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   .products {
@@ -151,171 +184,10 @@ footer {
   .product-gallery img {
     max-width: 90%;
   }
-}
-/* ===== Snipcart Modal Fix ===== */
-#snipcart {
-  font-family: 'Poppins', sans-serif;
-}
 
-.snipcart-modal__wrapper {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  max-width: 600px !important;
-  width: 90% !important;
-  height: auto !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  z-index: 9999 !important;
-}
-
-.snipcart-modal__content {
-  max-height: 80vh !important;
-  overflow-y: auto !important;
-  padding: 16px !important;
-}
-
-.snipcart-modal button,
-.snipcart-modal a {
-  font-family: inherit !important;
-  border-radius: 6px !important;
-}
-
-@media (max-width: 640px) {
-  .snipcart-modal__wrapper {
-    width: calc(100% - 24px) !important;
-    left: 12px !important;
-    top: 10% !important;
-    transform: none !important;
+  /* Snipcart modal mobile adjustments */
+  .snipcart-modal__content {
+    width: 90% !important;
+    margin: 20px auto !important;
   }
-}
-/* ===== Responsive Snipcart Modal ===== */
-.snipcart-modal__container {
-    width: 90%;             /* default for smaller screens */
-    max-width: 480px;       /* desktop/tablet max width */
-    margin: 0 auto !important;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.snipcart-modal__overlay {
-    z-index: 9999 !important;
-}
-
-/* Larger desktop adjustments */
-@media (min-width: 1024px) {
-    .snipcart-modal__container {
-        max-width: 480px;  /* keep it consistent on large screens */
-    }
-}
-/* ===== Snipcart Cart Styling ===== */
-.snipcart__container {
-    max-width: 480px !important;
-    margin: 40px auto !important;
-    padding: 20px !important;
-    border-radius: 8px;
-}
-
-.snipcart-cart__header,
-.snipcart-cart__footer {
-    text-align: center;
-    padding: 10px 0;
-}
-
-.snipcart-cart__item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-}
-
-.snipcart-cart__item-image img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.snipcart-cart__item-content {
-    flex: 1;
-    text-align: left;
-}
-
-.snipcart-cart__item-name {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.snipcart-cart__item-description {
-    font-size: 12px;
-    color: #666;
-}
-
-.snipcart-cart__item-quantity {
-    margin-top: 6px;
-}
-
-.snipcart-cart__item-total-price {
-    font-weight: 600;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.snipcart-cart__footer-subtotal,
-.snipcart-cart__footer-total {
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.snipcart-cart__footer button {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-/* Make sure modal content scrolls on small screens */
-.snipcart__container {
-    max-height: 90vh;
-    overflow-y: auto;
-}
-/* ===== Snipcart Cart Overrides ===== */
-#snipcart {
-  font-family: 'Poppins', sans-serif;
-}
-
-.snipcart__container {
-  max-width: 600px !important; /* desktop-friendly width */
-}
-
-.snipcart__cart {
-  font-size: 14px !important;
-}
-
-.snipcart__header,
-.snipcart__footer {
-  font-size: 14px !important;
-}
-
-.snipcart__item__title {
-  font-size: 16px !important;
-  font-weight: 600;
-}
-
-.snipcart__item__price,
-.snipcart__item__quantity {
-  font-size: 14px !important;
-}
-
-.snipcart__footer__totals {
-  font-size: 16px !important;
-  font-weight: 600;
-}
-
-.snipcart__close {
-  width: 32px !important;
-  height: 32px !important;
 }
