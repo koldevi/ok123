@@ -82,6 +82,9 @@ header {
   cursor: pointer;
   text-transform: uppercase;
   transition: background 0.3s ease;
+
+  position: relative;  /* ensures it’s above other layers */
+  z-index: 1000;       /* high enough to avoid being blocked */
 }
 
 .snipcart-add-item:hover {
