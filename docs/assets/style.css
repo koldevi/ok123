@@ -84,8 +84,8 @@ header img {
   max-width: 200px;
   margin: 10px auto 0;
   padding: 9px 0;
-  background: #000;
-  color: #fff !important;
+  background: none;
+  color: #0000 !important;
   border: none;
   border-radius: 6px;
   font-size: 14px;

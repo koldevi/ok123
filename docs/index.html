@@ -1,9 +1,11 @@
-<!-- FORCE UPDATE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Koldevi - Home</title>
+
 <!-- Favicon -->
 <link rel="icon" href="assets/favico.png" type="image/png">
 
@@ -12,12 +14,58 @@
 
 <!-- Snipcart CSS -->
 <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" />
+
+<!-- Cart Modal Fix -->
+<style>
+/* Center modal and constrain width */
+.snipcart-modal__wrapper {
+  max-width: 600px !important;
+  width: calc(100% - 32px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+/* Add Koldevi logo at top of modal */
+.snipcart-modal__wrapper::before {
+  content: "";
+  display: block;
+  height: 80px;
+  background: url('assets/logo.png') center center no-repeat;
+  background-size: contain;
+  margin-bottom: 16px;
+}
+
+/* Scrollable content inside modal */
+.snipcart-modal__content {
+  max-height: calc(80vh - 80px) !important;
+  overflow-y: auto !important;
+  padding: 16px !important;
+  box-sizing: border-box;
+}
+
+/* Mobile: full width with padding */
+@media (max-width: 640px) {
+  .snipcart-modal__wrapper {
+    width: calc(100% - 24px) !important;
+    left: 12px !important;
+    transform: none !important;
+  }
+}
+
+/* Buttons and links inside cart */
+.snipcart-modal button,
+.snipcart-modal a {
+  font-family: inherit;
+  border-radius: 6px;
+}
+</style>
 </head>
 <body>
 
 <main>
   <div class="product-grid">
-
     <div class="product-card">
       <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
       <h2>Zip Up Red</h2>
@@ -62,7 +110,6 @@
       </button>
       <a href="black-logo-zip.html" class="view-product">View Product</a>
     </div>
-
   </div>
 </main>
 
@@ -78,5 +125,3 @@
 
 </body>
 </html>
-
-<!-- rebuild trigger -->
