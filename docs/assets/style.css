@@ -190,4 +190,22 @@ footer {
     transform: none !important;
   }
 }
+/* ===== Responsive Snipcart Modal ===== */
+.snipcart-modal__container {
+    width: 90%;             /* default for smaller screens */
+    max-width: 480px;       /* desktop/tablet max width */
+    margin: 0 auto !important;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+.snipcart-modal__overlay {
+    z-index: 9999 !important;
+}
+
+/* Larger desktop adjustments */
+@media (min-width: 1024px) {
+    .snipcart-modal__container {
+        max-width: 480px;  /* keep it consistent on large screens */
+    }
+}
