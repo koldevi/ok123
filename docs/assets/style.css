@@ -227,3 +227,23 @@ footer {
 .kd-header a {
   pointer-events: auto; /* keep logo clickable */
 }
+/* ===== Fix: make products clickable ===== */
+.products,
+.product-card,
+.snipcart-add-item,
+.view-product {
+  position: relative !important;
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+}
+
+/* Stop header from blocking clicks */
+.kd-header {
+  pointer-events: none !important;
+}
+
+/* Keep logo and cart clickable */
+.kd-logo,
+.kd-header .kd-cart {
+  pointer-events: auto !important;
+}
