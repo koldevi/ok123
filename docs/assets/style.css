@@ -7,13 +7,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fff;
+  background: #fff;   /* full white background */
   color: #000;
   text-align: center;
   overflow-x: hidden;
 }
 
-/* ===== Header (only homepage) ===== */
+/* ===== Header ===== */
 header {
   padding: 15px 0 10px;
 }
@@ -25,7 +25,7 @@ header img {
 
 /* Header logo */
 .kd-logo {
-  height: 40px;       /* adjust as needed */
+  height: 40px;
   object-fit: contain;
   display: block;
 }
@@ -40,7 +40,7 @@ header img {
   left: 0;
   right: 0;
   height: 72px;
-  background: transparent; /* keeps it clean */
+  background: transparent;
   z-index: 60;
 }
 
@@ -54,9 +54,12 @@ header img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center; /* vertically center */
+  min-height: calc(100vh - 72px); /* full viewport height minus header */
   gap: 20px;
   padding: 30px 10px 60px;
+  margin: 0 auto;
+  border-bottom: none; /* remove bottom line */
 }
 
 /* ===== Product Card ===== */
@@ -85,7 +88,7 @@ header img {
   pointer-events: none;
 }
 
-/* ===== Text ===== */
+/* ===== Product Title / Price ===== */
 .product-card h3 {
   font-size: 15px;
   font-weight: 600;
@@ -98,7 +101,6 @@ header img {
 }
 
 /* ===== Buttons / Links ===== */
-
 /* Add to Cart Button */
 .snipcart-add-item {
   display: block;
@@ -119,24 +121,24 @@ header img {
 }
 
 .snipcart-add-item:hover {
-  background: #111; /* slightly darker on hover */
+  background: #111;
 }
 
 /* View Product Link */
 .view-product {
   display: inline-block;
-  background: none;       /* no background */
-  color: #000 !important; /* black text */
+  background: none;
+  color: #000 !important;
   text-decoration: none !important;
   cursor: pointer;
   margin-top: 8px;
 }
 
 .view-product:hover {
-  text-decoration: underline; /* optional hover effect */
+  text-decoration: underline;
 }
 
-/* ===== General Links ===== */
+/* General Links */
 a,
 a:visited,
 a:hover {
@@ -149,9 +151,26 @@ a:hover {
 .product-page {
   text-align: center;
   padding: 30px 10px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Show both images stacked on mobile, side by side on desktop */
+/* Sticky Info Panel on Product Page */
+.sticky-info {
+  position: sticky;
+  bottom: 10px;
+  background: #fff;
+  padding: 15px 10px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Product Gallery */
 .product-gallery {
   display: flex;
   flex-direction: column;
@@ -183,6 +202,7 @@ a:hover {
   .products {
     flex-direction: column;
     align-items: center;
+    min-height: auto;
   }
 
   .product-card {
