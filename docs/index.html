@@ -5,43 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi - Home</title>
 
+<!-- Favicon -->
 <link rel="icon" href="assets/favico.png" type="image/png">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
-</head>
-<!-- Snipcart Cart Icon -->
-<a href="#" class="snipcart-checkout cart-icon" aria-label="Cart">
-  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="black" stroke-width="1.5">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L3 6v16a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18" />
-  </svg>
-</a>
 
+<!-- Styles -->
+<link rel="stylesheet" href="assets/style.css">
+
+<!-- Snipcart CSS -->
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+
+<!-- Cart Drawer Fix -->
 <style>
-.cart-icon {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  z-index: 9999;
-  background: white;
-  border-radius: 50%;
-  padding: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease;
+.snipcart-modal {
+  right: 0 !important;
+  left: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 450px !important;
+  max-width: 90% !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
 }
-.cart-icon:hover { transform: scale(1.05); }
-@media (max-width: 768px) {
-  .cart-icon { top: 14px; right: 14px; padding: 5px; }
+
+.snipcart-modal__content {
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  padding: 16px !important;
+  box-sizing: border-box;
+}
+
+.snipcart-modal__header::before {
+  content: "";
+  display: block;
+  height: 80px;
+  background: url('assets/logo.png') center center no-repeat;
+  background-size: contain;
+  margin-bottom: 16px;
+}
+
+.snipcart-modal button,
+.snipcart-modal a {
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .snipcart-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* === FIX: Make Add to Cart + View Product clickable === */
+.product-card,
+.snipcart-add-item,
+.view-product {
+  position: relative !important;
+  z-index: 5 !important;
+  pointer-events: auto !important;
+}
+
+.kd-header {
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+.view-product {
+  background: none !important;
+  color: #000 !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.view-product:hover {
+  text-decoration: underline !important;
 }
 </style>
-
+</head>
 <body>
+
 <header class="kd-header">
   <img src="assets/logo.png" class="kd-logo" alt="Koldevi Logo">
   <div class="kd-cart snipcart-checkout" aria-label="Cart">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
-         viewBox="0 0 24 24" stroke-width="2" stroke="black">
-      <path stroke-linecap="round" stroke-linejoin="round" 
-            d="M6 6h15l-1.5 9h-12L6 6zM9 6V4a3 3 0 116 0v2" />
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black" width="26" height="26">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h15l-1.5 9h-12L6 6zM9 6V4a3 3 0 116 0v2" />
     </svg>
     <span class="cart-count snipcart-items-count">0</span>
   </div>
@@ -99,15 +147,15 @@
   <p>© 1900 Koldevi</p>
 </footer>
 
-<!-- Snipcart Config -->
 <script>
-  window.SnipcartSettings = {
-    publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
-    loadStrategy: 'immediate'
-  };
+window.SnipcartSettings = {
+  publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
+  loadStrategy: 'immediate'
+};
 </script>
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+
 <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+
 <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
 
 </body>
