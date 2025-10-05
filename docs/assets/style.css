@@ -22,6 +22,25 @@ header img {
   width: 130px;
   height: auto;
 }
+/* Header logo */
+.kd-logo {
+    height: 40px;       /* adjust as needed */
+    object-fit: contain;
+    display: block;
+}
+.kd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: transparent; /* keeps it clean */
+    z-index: 60;
+}
 
 /* Hide header/logo on product pages */
 .product-page header {
