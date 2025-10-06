@@ -14,12 +14,6 @@
   <a href="index.html">
     <img src="assets/logo.png" class="kd-logo" alt="Koldevi Logo">
   </a>
-  <div class="kd-cart snipcart-checkout" aria-label="Cart">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black" width="26" height="26">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h15l-1.5 9h-12L6 6zM9 6V4a3 3 0 116 0v2" />
-    </svg>
-    <span class="cart-count snipcart-items-count">0</span>
-  </div>
 </header>
 
 <main class="product-page">
@@ -46,31 +40,34 @@
       <input type="number" name="quantity" value="1" min="1">
     </div>
 
-    <button class="snipcart-add-item"
-      data-item-id="red-zip-hoodie"
-      data-item-name="V1 - Red Zip Up Hoodie"
-      data-item-price="75"
-      data-item-url="/koldevi/zip-up-red.html"
-      data-item-description="Premium red zip-up hoodie with soft fabric and Koldevi style.">
-      Add to Cart
-    </button>
+    <a href="https://square.link/u/xAJprEU3?src=sheet" target="_blank" class="buy-now">
+      Buy Now
+    </a>
   </div>
 </main>
 
 <footer>
-  <p>© 1900 Koldevi</p>
+  <p>© 2025 Koldevi</p>
 </footer>
 
-<!-- Snipcart Integration -->
-<script>
-  window.SnipcartSettings = {
-    publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
-    loadStrategy: 'immediate'
-  };
-</script>
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
-<script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+<style>
+.buy-now {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.buy-now:hover {
+  background: #111;
+}
+</style>
 
 </body>
 </html>
+

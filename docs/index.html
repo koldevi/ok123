@@ -5,12 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi</title>
 
-<!-- Favicon -->
 <link rel="icon" href="assets/favico.png" type="image/png">
-
-<!-- Snipcart CSS & JS -->
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
-<script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js" async></script>
 
 <style>
 body {
@@ -37,19 +32,6 @@ header img {
   cursor: pointer;
 }
 
-.kd-cart {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.kd-cart svg {
-  width: 26px;
-  height: 26px;
-  stroke: black;
-}
-
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -69,7 +51,7 @@ header img {
 }
 
 /* Buttons below image */
-.product-card .button-container {
+.button-container {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -77,7 +59,7 @@ header img {
   align-items: center;
 }
 
-.snipcart-add-item {
+.buy-now {
   display: inline-block;
   padding: 8px 16px;
   background: #000;
@@ -86,9 +68,10 @@ header img {
   border-radius: 6px;
   cursor: pointer;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
-.snipcart-add-item:hover {
+.buy-now:hover {
   background: #111;
 }
 
@@ -100,23 +83,12 @@ header img {
 .view-product:hover {
   text-decoration: underline;
 }
-
-#snipcart {
-  position: fixed !important;
-  z-index: 9999 !important;
-}
 </style>
 </head>
 <body>
 
 <header>
   <img src="assets/logo.png" alt="Koldevi Logo" onclick="window.location.href='index.html'">
-  <div class="kd-cart snipcart-checkout">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h15l-1.5 9h-12L6 6zM9 6V4a3 3 0 116 0v2" />
-    </svg>
-    <span class="cart-count snipcart-items-count">0</span>
-  </div>
 </header>
 
 <main>
@@ -126,15 +98,8 @@ header img {
     <div class="product-card">
       <img src="assets/front-red-hoodie.png" alt="Red Hoodie Front">
       <div class="button-container">
-        <button class="snipcart-add-item"
-                data-item-id="zip-up-red"
-                data-item-name="V1 - Zip Up Red Hoodie"
-                data-item-price="75"
-                data-item-url="zip-up-red.html"
-                data-item-description="Premium red zip-up hoodie.">
-            Add to Cart
-        </button>
-        <a href="zip-up-red.html" class="view-product">View Product</a>
+        <a href="https://square.link/u/xAJprEU3?src=sheet" class="buy-now" target="_blank">Buy Now</a>
+        <a href="red.html" class="view-product">View Product</a>
       </div>
     </div>
 
@@ -142,14 +107,7 @@ header img {
     <div class="product-card">
       <img src="assets/front-zip-up-purple-logo.png" alt="Purple Hoodie Front">
       <div class="button-container">
-        <button class="snipcart-add-item"
-                data-item-id="zip-up-purple"
-                data-item-name="V2 - Zip Up Purple Hoodie"
-                data-item-price="75"
-                data-item-url="zip-up-purple.html"
-                data-item-description="Purple zip-up hoodie featuring the Koldevi logo and soft fleece interior.">
-            Add to Cart
-        </button>
+        <a href="#" class="buy-now" target="_blank">Buy Now</a>
         <a href="zip-up-purple.html" class="view-product">View Product</a>
       </div>
     </div>
@@ -158,14 +116,7 @@ header img {
     <div class="product-card">
       <img src="assets/black-logo-zip-up.png" alt="Black Hoodie Front">
       <div class="button-container">
-        <button class="snipcart-add-item"
-                data-item-id="black-logo-zip"
-                data-item-name="V3 - Black Logo Zip Up Hoodie"
-                data-item-price="85"
-                data-item-url="black-logo-zip.html"
-                data-item-description="Premium black zip-up hoodie.">
-            Add to Cart
-        </button>
+        <a href="#" class="buy-now" target="_blank">Buy Now</a>
         <a href="black-logo-zip.html" class="view-product">View Product</a>
       </div>
     </div>
@@ -173,8 +124,9 @@ header img {
   </div>
 </main>
 
-<!-- Snipcart div -->
-<div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+<footer style="text-align:center;padding:30px 0;">
+  <p>© 2025 Koldevi</p>
+</footer>
 
 </body>
 </html>
