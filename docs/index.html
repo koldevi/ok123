@@ -5,14 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi Test</title>
 
-<!-- Favicon (clickable to home) -->
+<!-- Favicon -->
 <link rel="icon" href="assets/favico.png" type="image/png">
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const favicon = document.querySelector('link[rel="icon"]');
-    favicon.addEventListener("click", () => { window.location.href = "index.html"; });
-  });
-</script>
 
 <!-- Snipcart CSS & JS -->
 <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
@@ -40,6 +34,7 @@ header {
 
 header img {
   height: 40px;
+  cursor: pointer;
 }
 
 .kd-cart {
@@ -73,7 +68,7 @@ header img {
   height: auto;
 }
 
-/* Buttons below image */
+/* Buttons below images */
 .product-card .button-container {
   margin-top: 10px;
   display: flex;
@@ -129,7 +124,8 @@ header img {
 
     <!-- V1 Red Hoodie -->
     <div class="product-card">
-      <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
+      <img src="assets/front-red-hoodie.png" alt="Red Hoodie Front">
+      <img src="assets/back-red-hoodie.png" alt="Red Hoodie Back">
       <div class="button-container">
         <button class="snipcart-add-item"
                 data-item-id="zip-up-red"
@@ -145,7 +141,8 @@ header img {
 
     <!-- V2 Purple Hoodie -->
     <div class="product-card">
-      <img src="assets/front-zip-up-purple-logo.png" alt="Zip Up Purple Hoodie">
+      <img src="assets/front-zip-up-purple-logo.png" alt="Purple Hoodie Front">
+      <img src="assets/back-zip-up-purple.png" alt="Purple Hoodie Back">
       <div class="button-container">
         <button class="snipcart-add-item"
                 data-item-id="zip-up-purple"
@@ -161,7 +158,7 @@ header img {
 
     <!-- V3 Black Logo Hoodie -->
     <div class="product-card">
-      <img src="assets/black-logo-zip-up.png" alt="Black Logo Zip">
+      <img src="assets/black-logo-zip-up.png" alt="Black Hoodie Front">
       <div class="button-container">
         <button class="snipcart-add-item"
                 data-item-id="black-logo-zip"
