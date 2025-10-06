@@ -1,133 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koldevi</title>
-
-<link rel="icon" href="assets/favico.png" type="image/png">
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
-}
-
-header img {
-  height: 40px;
-  cursor: pointer;
-}
-
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 100px 10px 60px;
-}
-
-.product-card {
-  text-align: center;
-}
-
-.product-card img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-}
-
-/* Buttons below image */
-.button-container {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: center;
-}
-
-.buy-now {
-  display: inline-block;
-  padding: 8px 16px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.buy-now:hover {
-  background: #111;
-}
-
-.view-product {
-  color: #000;
-  text-decoration: none;
-}
-
-.view-product:hover {
-  text-decoration: underline;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V? - Purple Zip Up Hoodie | Koldevi</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/favico.png" type="image/png">
 </head>
 <body>
 
-<header>
-  <img src="assets/logo.png" alt="Koldevi Logo" onclick="window.location.href='index.html'">
+<header class="kd-header">
+  <a href="index.html">
+    <img src="assets/logo.png" class="kd-logo" alt="Koldevi Logo">
+  </a>
 </header>
 
-<main>
-  <div class="products">
+<main class="product-page">
+  <section class="product-gallery">
+    <img src="assets/front-purple-hoodie.png" alt="Front Purple Hoodie">
+    <img src="assets/back-purple-zip-up.png" alt="Back Purple Hoodie">
+  </section>
 
-    <!-- V1 Red Hoodie -->
-    <div class="product-card">
-      <img src="assets/front-red-hoodie.png" alt="Red Hoodie Front">
-      <div class="button-container">
-        <a href="https://square.link/u/xAJprEU3?src=sheet" class="buy-now" target="_blank">Buy Now</a>
-        <a href="red.html" class="view-product">View Product</a>
-      </div>
+  <div class="sticky-info">
+    <div class="prod-title">Purple Zip Up Hoodie</div>
+    <div class="prod-price">$75</div>
+
+    <div class="size-select">
+      Size:
+      <select name="size">
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
     </div>
 
-    <!-- V2 Purple Hoodie -->
-    <div class="product-card">
-      <img src="assets/front-zip-up-purple-logo.png" alt="Purple Hoodie Front">
-      <div class="button-container">
-        <a href="#" class="buy-now" target="_blank">Buy Now</a>
-        <a href="zip-up-purple.html" class="view-product">View Product</a>
-      </div>
+    <div class="qty-input">
+      Quantity:
+      <input type="number" name="quantity" value="1" min="1">
     </div>
 
-    <!-- V3 Black Logo Hoodie -->
-    <div class="product-card">
-      <img src="assets/black-logo-zip-up.png" alt="Black Hoodie Front">
-      <div class="button-container">
-        <a href="#" class="buy-now" target="_blank">Buy Now</a>
-        <a href="black-logo-zip.html" class="view-product">View Product</a>
-      </div>
-    </div>
-
+    <a href="https://square.link/u/KMIHORh9?src=sheet" target="_blank" class="buy-now">
+      Buy Now
+    </a>
   </div>
 </main>
 
-<footer style="text-align:center;padding:30px 0;">
-  <p>© 2025 Koldevi</p>
+<footer>
+  <p>1900KOLDEVI</p>
 </footer>
+
+<style>
+  .buy-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .buy-now:hover { background: #111; }
+</style>
 
 </body>
 </html>
-
