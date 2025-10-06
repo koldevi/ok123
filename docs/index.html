@@ -4,46 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koldevi - Home</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favico.png" type="image/png">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/style.css">
-
-  <!-- Swiper CSS for product gallery -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="icon" href="assets/favico.png" type="image/png">
 
   <!-- Snipcart CSS -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
-
   <style>
-    body, html { margin: 0; padding: 0; font-family: 'Arial', sans-serif; background: #fff; color: #000; }
-    .kd-header {
-      position: fixed; top: 0; left: 0; width: 100%;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 20px; height: 72px; background: #fff; z-index: 1000;
-    }
-    .kd-logo { height: 40px; cursor: pointer; }
-    .kd-cart { cursor: pointer; display: flex; align-items: center; gap: 6px; }
-
-    main { padding: 100px 10px 60px; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
-    .product-card { width: 300px; text-align: center; }
-
-    .swiper { width: 100%; height: 300px; margin-bottom: 10px; }
-    .swiper-slide img { width: 100%; height: 100%; object-fit: contain; }
-
-    .snipcart-add-item {
-      display: inline-block; margin: 8px auto; padding: 8px 16px;
-      background: #000; color: #fff; border: none; border-radius: 6px;
-      font-weight: 600; cursor: pointer; text-transform: uppercase; transition: background 0.3s ease;
-    }
-    .snipcart-add-item:hover { background: #111; }
-
-    .view-product { display: block; margin: 4px auto; color: #000; text-decoration: none; }
-    .view-product:hover { text-decoration: underline; }
-
-    #snipcart { position: fixed !important; z-index: 9999 !important; }
+    body { background: white; color: black; margin:0; font-family: sans-serif; }
+    .kd-header { display:flex; justify-content:space-between; align-items:center; padding: 10px 20px; position: fixed; width:100%; top:0; background:white; z-index:1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+    .kd-logo { height: 40px; cursor:pointer; }
+    .kd-cart { cursor:pointer; display:flex; align-items:center; gap:6px; }
+    main { padding: 100px 20px 50px; display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+    .product-card { text-align:center; width:250px; }
+    .product-card img { width:100%; height:auto; object-fit:contain; }
+    .snipcart-add-item, .view-product { display:block; width:100%; margin:8px 0; padding:8px 0; text-transform:uppercase; border:none; border-radius:6px; cursor:pointer; }
+    .snipcart-add-item { background:#000; color:white; font-weight:600; }
+    .snipcart-add-item:hover { background:#111; }
+    .view-product { background:none; color:black; text-decoration:underline; }
   </style>
 </head>
 <body>
@@ -59,19 +36,9 @@
 </header>
 
 <main>
-  <!-- Product 1: Red Hoodie -->
+  <!-- Red Hoodie -->
   <div class="product-card">
-    <div class="swiper red-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/front-red-hoodie.png" alt="Front Red Hoodie"></div>
-        <div class="swiper-slide"><img src="assets/back-red-zip-up.png" alt="Back Red Hoodie"></div>
-      </div>
-      <!-- Swiper navigation -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-    <div>V1 - Zip Up Red Hoodie</div>
-    <div>$75</div>
+    <img src="assets/front-red-hoodie.png" alt="Red Hoodie">
     <button class="snipcart-add-item"
       data-item-id="zip-up-red"
       data-item-name="V1 - Zip Up Red Hoodie"
@@ -83,18 +50,9 @@
     <a href="zip-up-red.html" class="view-product">View Product</a>
   </div>
 
-  <!-- Product 2: Purple Hoodie -->
+  <!-- Purple Hoodie -->
   <div class="product-card">
-    <div class="swiper purple-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/front-zip-up-purple-logo.png" alt="Front Purple Hoodie"></div>
-        <div class="swiper-slide"><img src="assets/back-purple-zip.png" alt="Back Purple Hoodie"></div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-    <div>V2 - Zip Up Purple Hoodie</div>
-    <div>$75</div>
+    <img src="assets/front-zip-up-purple-logo.png" alt="Purple Hoodie">
     <button class="snipcart-add-item"
       data-item-id="zip-up-purple"
       data-item-name="V2 - Zip Up Purple Hoodie"
@@ -106,18 +64,9 @@
     <a href="zip-up-purple.html" class="view-product">View Product</a>
   </div>
 
-  <!-- Product 3: Black Hoodie -->
+  <!-- Black Hoodie -->
   <div class="product-card">
-    <div class="swiper black-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/black-logo-zip-up.png" alt="Front Black Hoodie"></div>
-        <div class="swiper-slide"><img src="assets/back-black-zip.png" alt="Back Black Hoodie"></div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-    <div>V3 - Black Logo Zip Up Hoodie</div>
-    <div>$85</div>
+    <img src="assets/black-logo-zip-up.png" alt="Black Hoodie">
     <button class="snipcart-add-item"
       data-item-id="black-logo-zip"
       data-item-name="V3 - Black Logo Zip Up Hoodie"
@@ -130,34 +79,12 @@
   </div>
 </main>
 
-<footer>
-  <p>© 1900 Koldevi</p>
-</footer>
+<footer style="text-align:center; padding:20px;">© 1900 Koldevi</footer>
 
-<!-- Snipcart Integration -->
-<script>
-  window.SnipcartSettings = {
-    publicApiKey: 'NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz',
-    loadStrategy: 'immediate'
-  };
-</script>
+<!-- Snipcart -->
 <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>
-  const swipers = document.querySelectorAll('.swiper');
-  swipers.forEach(swiperEl => {
-    new Swiper(swiperEl, {
-      loop: true,
-      navigation: {
-        nextEl: swiperEl.querySelector('.swiper-button-next'),
-        prevEl: swiperEl.querySelector('.swiper-button-prev'),
-      },
-    });
-  });
-</script>
-
 <div hidden id="snipcart" data-api-key="NGVlZWIzYzQtNjRlNC00NmE2LWI3M2ItODI4MTJhMWNkNTY1NjM4OTUwMzc5NjYxNjQ0MzYz"></div>
+
 </body>
 </html>
+
