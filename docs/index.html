@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi Test</title>
 
+<!-- Favicon (clickable to home) -->
+<link rel="icon" href="assets/favico.png" type="image/png">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const favicon = document.querySelector('link[rel="icon"]');
+    favicon.addEventListener("click", () => { window.location.href = "index.html"; });
+  });
+</script>
+
 <!-- Snipcart CSS & JS -->
 <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
 <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js" async></script>
@@ -64,9 +73,17 @@ header img {
   height: auto;
 }
 
+/* Buttons below image */
+.product-card .button-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
 .snipcart-add-item {
   display: inline-block;
-  margin: 8px auto;
   padding: 8px 16px;
   background: #000;
   color: #fff;
@@ -81,8 +98,6 @@ header img {
 }
 
 .view-product {
-  display: inline-block;
-  margin: 8px auto;
   color: #000;
   text-decoration: none;
 }
@@ -100,7 +115,7 @@ header img {
 <body>
 
 <header>
-  <img src="assets/logo.png" alt="Koldevi Logo">
+  <img src="assets/logo.png" alt="Koldevi Logo" onclick="window.location.href='index.html'">
   <div class="kd-cart snipcart-checkout">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h15l-1.5 9h-12L6 6zM9 6V4a3 3 0 116 0v2" />
@@ -115,43 +130,49 @@ header img {
     <!-- V1 Red Hoodie -->
     <div class="product-card">
       <img src="assets/front-red-hoodie.png" alt="Zip Up Red Hoodie">
-      <button class="snipcart-add-item"
-              data-item-id="zip-up-red"
-              data-item-name="V1 - Zip Up Red Hoodie"
-              data-item-price="75"
-              data-item-url="zip-up-red.html"
-              data-item-description="Premium red zip-up hoodie.">
-          Add to Cart
-      </button>
-      <a href="zip-up-red.html" class="view-product">View Product</a>
+      <div class="button-container">
+        <button class="snipcart-add-item"
+                data-item-id="zip-up-red"
+                data-item-name="V1 - Zip Up Red Hoodie"
+                data-item-price="75"
+                data-item-url="zip-up-red.html"
+                data-item-description="Premium red zip-up hoodie.">
+            Add to Cart
+        </button>
+        <a href="zip-up-red.html" class="view-product">View Product</a>
+      </div>
     </div>
 
     <!-- V2 Purple Hoodie -->
     <div class="product-card">
       <img src="assets/front-zip-up-purple-logo.png" alt="Zip Up Purple Hoodie">
-      <button class="snipcart-add-item"
-              data-item-id="zip-up-purple"
-              data-item-name="V2 - Zip Up Purple Hoodie"
-              data-item-price="75"
-              data-item-url="zip-up-purple.html"
-              data-item-description="Purple zip-up hoodie featuring the Koldevi logo and soft fleece interior.">
-          Add to Cart
-      </button>
-      <a href="zip-up-purple.html" class="view-product">View Product</a>
+      <div class="button-container">
+        <button class="snipcart-add-item"
+                data-item-id="zip-up-purple"
+                data-item-name="V2 - Zip Up Purple Hoodie"
+                data-item-price="75"
+                data-item-url="zip-up-purple.html"
+                data-item-description="Purple zip-up hoodie featuring the Koldevi logo and soft fleece interior.">
+            Add to Cart
+        </button>
+        <a href="zip-up-purple.html" class="view-product">View Product</a>
+      </div>
     </div>
 
     <!-- V3 Black Logo Hoodie -->
     <div class="product-card">
       <img src="assets/black-logo-zip-up.png" alt="Black Logo Zip">
-      <button class="snipcart-add-item"
-              data-item-id="black-logo-zip"
-              data-item-name="V3 - Black Logo Zip Up Hoodie"
-              data-item-price="85"
-              data-item-url="black-logo-zip.html"
-              data-item-description="Premium black zip-up hoodie.">
-          Add to Cart
-      </button>
-      <a href="black-logo-zip.html" class="view-product">View Product</a>
+      <div class="button-container">
+        <button class="snipcart-add-item"
+                data-item-id="black-logo-zip"
+                data-item-name="V3 - Black Logo Zip Up Hoodie"
+                data-item-price="85"
+                data-item-url="black-logo-zip.html"
+                data-item-description="Premium black zip-up hoodie.">
+            Add to Cart
+        </button>
+        <a href="black-logo-zip.html" class="view-product">View Product</a>
+      </div>
     </div>
 
   </div>
