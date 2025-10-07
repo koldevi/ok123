@@ -4,69 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi VIP Landing</title>
-<link rel="icon" href="assets/favico.png" type="image/png">
+<link rel="icon" href="assets/logo.png" type="image/png">
 <style>
+  /* Fullscreen background */
   body {
     margin: 0;
     padding: 0;
-    background: url('assets/passwordpage background pic.jpg') no-repeat center center;
+    font-family: 'Arial', sans-serif;
+    background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     text-align: center;
   }
+
+  /* Logo on top */
   .logo {
-    max-width: 150px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    max-width: 200px;
   }
+
+  /* Countdown numbers */
   .countdown {
-    font-size: 48px;
-    letter-spacing: 4px;
-    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
+
+  .countdown div {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  /* Klaviyo form container */
   .klaviyo-form-VZJ6EQ {
     max-width: 400px;
-    width: 100%;
+    margin: 0 auto 50px;
   }
 </style>
 </head>
 <body>
 
+<!-- Logo -->
 <img src="assets/logo.png" alt="Koldevi Logo" class="logo">
 
-<div class="countdown" id="countdown">00:00:00:00</div>
+<!-- Countdown Timer -->
+<div class="countdown">
+  <div id="days">00</div>
+  <div id="hours">00</div>
+  <div id="minutes">00</div>
+  <div id="seconds">00</div>
+</div>
 
-<!-- Klaviyo form -->
+<!-- Klaviyo Form -->
 <div class="klaviyo-form-VZJ6EQ"></div>
 
+<!-- Countdown Script -->
 <script>
-  const launchDate = new Date("October 19, 2025 00:00:00").getTime();
-  const countdownEl = document.getElementById("countdown");
+  // Set target drop date
+  const targetDate = new Date('October 19, 2025 00:00:00').getTime();
 
-  const timer = setInterval(() => {
+  const countdownEl = {
+    days: document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    minutes: document.getElementById('minutes'),
+    seconds: document.getElementById('seconds')
+  };
+
+  function updateCountdown() {
     const now = new Date().getTime();
-    const distance = launchDate - now;
+    const distance = targetDate - now;
 
     if (distance < 0) {
-      clearInterval(timer);
-      countdownEl.innerHTML = "00:00:00:00";
+      countdownEl.days.innerText = '00';
+      countdownEl.hours.innerText = '00';
+      countdownEl.minutes.innerText = '00';
+      countdownEl.seconds.innerText = '00';
       return;
     }
 
-    const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2,'0');
-    const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2,'0');
-    const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2,'0');
-    const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2,'0');
+    countdownEl.days.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    countdownEl.hours.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    countdownEl.minutes.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    countdownEl.seconds.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+  }
 
-    countdownEl.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
-  }, 1000);
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 </script>
+
+<!-- Klaviyo Embed Script -->
+<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SXp7ce"></script>
 
 </body>
 </html>
-
