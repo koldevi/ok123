@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koldevi VIP Access</title>
-  <link rel="icon" href="assets/favico.png" type="image/png">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background: #fff;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koldevi VIP Landing</title>
+<link rel="icon" href="assets/favico.png" type="image/png">
+<style>
+  /* Full-page background */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+  }
+
+  /* Small logo at top center */
+  .logo {
+    max-width: 120px;  /* smaller size */
+    margin-bottom: 30px;
+  }
+
+  /* Countdown timer styling */
+  .countdown {
+    font-size: 2em;
+    margin: 20px 0;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  /* Klaviyo form */
+  .klaviyo-form {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(0,0,0,0.4);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .countdown {
+      font-size: 1.5em;
     }
-    img {
-      width: 150px;
-      margin-bottom: 40px;
-    }
-    .klaviyo-form-VZJ6EQ {
-      width: 100%;
-      max-width: 400px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <img src="assets/logo.png" alt="Koldevi Logo">
 
-  <!-- Klaviyo form placeholder -->
+<!-- Logo -->
+<img src="assets/logo.png" alt="Koldevi Logo" class="logo">
+
+<!-- Countdown -->
+<div class="countdown" id="countdown">Loading countdown...</div>
+
+<!-- Klaviyo form placeholder -->
+<div class="klaviyo-form">
   <div class="klaviyo-form-VZJ6EQ"></div>
+</div>
 
-  <!-- Klaviyo script -->
-  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SXp7ce"></script>
+<script>
+  // Countdown to October 19, 2025
+  const countdownDate = new Date("Oct 19, 2025 00:00:00").getTime();
+  const countdownEl = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    if (distance < 0) {
+      countdownEl.innerHTML = "The drop is live!";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
+</script>
+
 </body>
 </html>
