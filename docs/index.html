@@ -11,15 +11,17 @@
 
 <style>
   /* Fullscreen background */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: url('assets/passwordpage background pic.jpg') no-repeat center top;
+  background-size: contain; /* ensures full image visible on all screens */
+  background-color: #000;   /* fallback in case image doesn't fill */
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
 
   /* Logo on top */
   .logo {
