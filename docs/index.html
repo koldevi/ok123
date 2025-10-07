@@ -4,87 +4,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi VIP Landing</title>
-<link rel="icon" href="assets/logo.png" type="image/png">
-
-<!-- Google Font Anton for Supreme-like font -->
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
+<link rel="icon" href="assets/favico.png" type="image/png">
 <style>
-  /* Full-screen background */
   body {
     margin: 0;
     padding: 0;
     background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Anton', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    min-height: 100vh;
+    justify-content: flex-start;
+    height: 100vh;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #fff;
   }
 
-  /* Logo at top middle */
   .logo {
-    margin-top: 30px;
-    width: 120px;
-    height: auto;
-  }
-
-  /* Countdown timer styling */
-  .countdown {
-    margin: 40px 0 20px;
-    font-family: 'Anton', sans-serif;
-    font-size: 48px;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #fff;
-  }
-
-  /* Klaviyo form container */
-  .klaviyo-form-VZJ6EQ {
     margin-top: 20px;
-    max-width: 400px;
-    width: 90%;
+    width: 150px; /* small logo on top */
   }
 
-  /* Mobile adjustments */
-  @media (max-width: 768px) {
-    .countdown {
-      font-size: 36px;
-    }
-    .logo {
-      width: 100px;
-    }
+  .countdown {
+    margin-top: 40px;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Supreme-like font */
+    display: flex;
+    gap: 15px;
+  }
+
+  .klaviyo-form {
+    margin-top: 50px;
   }
 </style>
 </head>
-
 <body>
 
-  <!-- Logo -->
-  <img src="assets/logo.png" alt="Koldevi Logo" class="logo">
+<img src="assets/logo.png" class="logo" alt="Koldevi Logo">
 
-  <!-- Countdown Timer -->
-  <div class="countdown" id="countdown"></div>
+<div class="countdown" id="countdown">
+  <span id="days">00</span>d :
+  <span id="hours">00</span>h :
+  <span id="minutes">00</span>m :
+  <span id="seconds">00</span>s
+</div>
 
-  <!-- Klaviyo Form -->
+<div class="klaviyo-form">
   <div class="klaviyo-form-VZJ6EQ"></div>
+</div>
 
 <script>
-  // Set your drop date here
-  const dropDate = new Date("October 19, 2025 12:00:00").getTime();
+  // Countdown timer for 19th October 2025 12:00 PM
+  const targetDate = new Date("2025-10-19T12:00:00").getTime();
 
-  const countdownEl = document.getElementById("countdown");
-
-  const timer = setInterval(() => {
+  const countdown = setInterval(() => {
     const now = new Date().getTime();
-    const distance = dropDate - now;
+    const distance = targetDate - now;
 
     if (distance < 0) {
-      clearInterval(timer);
-      countdownEl.innerHTML = "LIVE NOW!";
+      clearInterval(countdown);
+      document.getElementById("countdown").innerHTML = "LAUNCHED!";
       return;
     }
 
@@ -93,7 +74,10 @@
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    countdownEl.innerHTML = `${days}D : ${hours}H : ${minutes}M : ${seconds}S`;
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
   }, 1000);
 </script>
 
