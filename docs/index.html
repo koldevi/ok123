@@ -5,100 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koldevi VIP Landing</title>
 <link rel="icon" href="assets/logo.png" type="image/png">
+
+<!-- Google Font Anton for Supreme-like font -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
 <style>
-  /* Fullscreen background */
+  /* Full-screen background */
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
     background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
-    text-align: center;
-  }
-
-  /* Logo on top */
-  .logo {
-    margin-top: 20px;
-    max-width: 200px;
-  }
-
-  /* Countdown numbers */
-  .countdown {
+    font-family: 'Anton', sans-serif;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 50px 0;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    color: #fff;
   }
 
-  .countdown div {
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 6px;
+  /* Logo at top middle */
+  .logo {
+    margin-top: 30px;
+    width: 120px;
+    height: auto;
+  }
+
+  /* Countdown timer styling */
+  .countdown {
+    margin: 40px 0 20px;
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fff;
   }
 
   /* Klaviyo form container */
   .klaviyo-form-VZJ6EQ {
+    margin-top: 20px;
     max-width: 400px;
-    margin: 0 auto 50px;
+    width: 90%;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .countdown {
+      font-size: 36px;
+    }
+    .logo {
+      width: 100px;
+    }
   }
 </style>
 </head>
+
 <body>
 
-<!-- Logo -->
-<img src="assets/logo.png" alt="Koldevi Logo" class="logo">
+  <!-- Logo -->
+  <img src="assets/logo.png" alt="Koldevi Logo" class="logo">
 
-<!-- Countdown Timer -->
-<div class="countdown">
-  <div id="days">00</div>
-  <div id="hours">00</div>
-  <div id="minutes">00</div>
-  <div id="seconds">00</div>
-</div>
+  <!-- Countdown Timer -->
+  <div class="countdown" id="countdown"></div>
 
-<!-- Klaviyo Form -->
-<div class="klaviyo-form-VZJ6EQ"></div>
+  <!-- Klaviyo Form -->
+  <div class="klaviyo-form-VZJ6EQ"></div>
 
-<!-- Countdown Script -->
 <script>
-  // Set target drop date
-  const targetDate = new Date('October 19, 2025 00:00:00').getTime();
+  // Set your drop date here
+  const dropDate = new Date("October 19, 2025 12:00:00").getTime();
 
-  const countdownEl = {
-    days: document.getElementById('days'),
-    hours: document.getElementById('hours'),
-    minutes: document.getElementById('minutes'),
-    seconds: document.getElementById('seconds')
-  };
+  const countdownEl = document.getElementById("countdown");
 
-  function updateCountdown() {
+  const timer = setInterval(() => {
     const now = new Date().getTime();
-    const distance = targetDate - now;
+    const distance = dropDate - now;
 
     if (distance < 0) {
-      countdownEl.days.innerText = '00';
-      countdownEl.hours.innerText = '00';
-      countdownEl.minutes.innerText = '00';
-      countdownEl.seconds.innerText = '00';
+      clearInterval(timer);
+      countdownEl.innerHTML = "LIVE NOW!";
       return;
     }
 
-    countdownEl.days.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-    countdownEl.hours.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-    countdownEl.minutes.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-    countdownEl.seconds.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
-  }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+    countdownEl.innerHTML = `${days}D : ${hours}H : ${minutes}M : ${seconds}S`;
+  }, 1000);
 </script>
-
-<!-- Klaviyo Embed Script -->
-<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SXp7ce"></script>
 
 </body>
 </html>
+
