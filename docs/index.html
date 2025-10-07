@@ -10,14 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-  body {
+  /* Fullscreen background */
+body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #000;
+    background: url('assets/passwordpage background pic.jpg') no-repeat center;
+    background-size: contain;       /* ensures full image visible */
+    background-position: center 50%; /* moves image down roughly to center behind timer */
+    background-color: #000;         /* fallback */
+    min-height: 100vh;
     color: #fff;
     text-align: center;
-  }
+}
 
   /* Logo on top */
   .logo {
@@ -25,32 +30,12 @@
     max-width: 200px;
   }
 
-  /* Countdown container with background image behind it */
-  .countdown-container {
-    position: relative;
-    display: inline-block;
-    margin: 50px auto;
-    width: 100%;
-    max-width: 800px;
-  }
-
-  .countdown-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* adjust as needed */
-    object-fit: contain;
-    z-index: -1; /* behind countdown */
-  }
-
   /* Countdown numbers */
   .countdown {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin: 50px 0;
     font-size: 3rem;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
@@ -58,6 +43,7 @@
   }
 
   .countdown div {
+    /* Removed background for clean look */
     padding: 0;
   }
 
@@ -66,21 +52,6 @@
     max-width: 400px;
     margin: 0 auto 50px;
   }
-
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    .countdown {
-      flex-direction: column;
-      gap: 10px;
-      font-size: 2rem;
-    }
-    .countdown-container {
-      max-width: 100%;
-    }
-    .countdown-bg {
-      max-height: 250px;
-    }
-  }
 </style>
 </head>
 <body>
@@ -88,15 +59,12 @@
 <!-- Logo -->
 <img src="assets/logo.png" alt="Koldevi Logo" class="logo">
 
-<!-- Countdown Timer with background behind it -->
-<div class="countdown-container">
-  <img src="assets/passwordpage background pic.jpg" alt="Background" class="countdown-bg">
-  <div class="countdown">
-    <div id="days">00</div>
-    <div id="hours">00</div>
-    <div id="minutes">00</div>
-    <div id="seconds">00</div>
-  </div>
+<!-- Countdown Timer -->
+<div class="countdown">
+  <div id="days">00</div>
+  <div id="hours">00</div>
+  <div id="minutes">00</div>
+  <div id="seconds">00</div>
 </div>
 
 <!-- Klaviyo Form -->
