@@ -11,18 +11,28 @@
 
 <style>
   /* Fullscreen background */
+<style>
+  /* Fullscreen background */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: url('assets/passwordpage background pic.jpg') no-repeat center;
-    background-size: contain;       /* ensures full image visible */
-    background-position: center 50%; /* moves image down roughly to center behind timer */
-    background-color: #000;         /* fallback */
+    background: url('assets/passwordpage background pic.jpg') no-repeat center top;
+    background-size: 100% auto; /* full width, height scales automatically */
+    background-color: #000; /* fallback */
     min-height: 100vh;
     color: #fff;
     text-align: center;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  body {
+    background-size: contain; /* ensures full image fits mobile width */
+    background-position: center top; /* aligns the image so all 3 photos visible */
+  }
+}
+</style>
 
   /* Logo on top */
   .logo {
