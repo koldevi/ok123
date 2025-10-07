@@ -11,33 +11,26 @@
 
 <style>
   /* Fullscreen background */
-<style>
-  /* Fullscreen background */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: url('assets/passwordpage background pic.jpg') no-repeat center top;
-    background-size: 100% auto; /* full width, height scales automatically */
-    background-color: #000; /* fallback */
+    background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
+    background-size: cover;        /* Full coverage for desktop and mobile */
+    background-position: center;   /* Centers image */
+    background-color: #000;        /* fallback */
     min-height: 100vh;
     color: #fff;
     text-align: center;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  body {
-    background-size: contain; /* ensures full image fits mobile width */
-    background-position: center top; /* aligns the image so all 3 photos visible */
-  }
-}
-</style>
-
   /* Logo on top */
   .logo {
     margin-top: 20px;
     max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Countdown numbers */
@@ -53,14 +46,26 @@ body {
   }
 
   .countdown div {
-    /* Removed background for clean look */
-    padding: 0;
+    padding: 0; /* No background */
   }
 
   /* Klaviyo form container */
   .klaviyo-form-VZJ6EQ {
     max-width: 400px;
     margin: 0 auto 50px;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    body {
+      background-size: contain; /* Show full image on mobile */
+      background-position: top center;
+    }
+    .countdown {
+      font-size: 2.5rem;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
   }
 </style>
 </head>
@@ -117,4 +122,5 @@ body {
 
 </body>
 </html>
+
 
