@@ -6,93 +6,67 @@
 <title>Koldevi VIP Landing</title>
 <link rel="icon" href="assets/favico.png" type="image/png">
 <style>
-  /* Full-page background */
   body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('assets/passwordpage background pic.jpg') no-repeat center center fixed;
+    background: url('assets/passwordpage background pic.jpg') no-repeat center center;
     background-size: cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    color: #fff;
+    height: 100vh;
     text-align: center;
   }
-
-  /* Small logo at top center */
   .logo {
-    max-width: 120px;  /* smaller size */
-    margin-bottom: 30px;
+    max-width: 150px;
+    margin-bottom: 40px;
   }
-
-  /* Countdown timer styling */
   .countdown {
-    font-size: 2em;
-    margin: 20px 0;
-    background: rgba(0,0,0,0.4);
-    padding: 10px 20px;
-    border-radius: 8px;
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
   }
-
-  /* Klaviyo form */
-  .klaviyo-form {
-    margin-top: 20px;
-    width: 90%;
+  .klaviyo-form-VZJ6EQ {
     max-width: 400px;
-    background: rgba(0,0,0,0.4);
-    padding: 15px;
-    border-radius: 8px;
-  }
-
-  @media (max-width: 600px) {
-    .countdown {
-      font-size: 1.5em;
-    }
+    width: 100%;
   }
 </style>
 </head>
 <body>
 
-<!-- Logo -->
 <img src="assets/logo.png" alt="Koldevi Logo" class="logo">
 
-<!-- Countdown -->
-<div class="countdown" id="countdown">Loading countdown...</div>
+<div class="countdown" id="countdown">00:00:00:00</div>
 
-<!-- Klaviyo form placeholder -->
-<div class="klaviyo-form">
-  <div class="klaviyo-form-VZJ6EQ"></div>
-</div>
+<!-- Klaviyo form -->
+<div class="klaviyo-form-VZJ6EQ"></div>
 
 <script>
-  // Countdown to October 19, 2025
-  const countdownDate = new Date("Oct 19, 2025 00:00:00").getTime();
+  const launchDate = new Date("October 19, 2025 00:00:00").getTime();
   const countdownEl = document.getElementById("countdown");
 
-  function updateCountdown() {
+  const timer = setInterval(() => {
     const now = new Date().getTime();
-    const distance = countdownDate - now;
+    const distance = launchDate - now;
 
     if (distance < 0) {
-      countdownEl.innerHTML = "The drop is live!";
-      clearInterval(interval);
+      clearInterval(timer);
+      countdownEl.innerHTML = "00:00:00:00";
       return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000*60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2,'0');
+    const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2,'0');
+    const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2,'0');
+    const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2,'0');
 
-    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
-
-  updateCountdown();
-  const interval = setInterval(updateCountdown, 1000);
+    countdownEl.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
+  }, 1000);
 </script>
 
 </body>
 </html>
+
