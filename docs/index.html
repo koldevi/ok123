@@ -3,25 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koldevi VIP Landing</title>
+<title>KOLDEVIP</title>
 <link rel="icon" href="assets/logo.png" type="image/png">
 
 <!-- Anton font from Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-  /* Fullscreen background */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('assets/passwordpage background pic.jpg') no-repeat center top;
-  background-size: contain; /* ensures full image visible on all screens */
-  background-color: #000;   /* fallback in case image doesn't fill */
-  min-height: 100vh;
-  color: #fff;
-  text-align: center;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
 
   /* Logo on top */
   .logo {
@@ -29,12 +25,32 @@ body {
     max-width: 200px;
   }
 
+  /* Countdown container with background image behind it */
+  .countdown-container {
+    position: relative;
+    display: inline-block;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .countdown-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* adjust as needed */
+    object-fit: contain;
+    z-index: -1; /* behind countdown */
+  }
+
   /* Countdown numbers */
   .countdown {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin: 50px 0;
     font-size: 3rem;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
@@ -42,7 +58,6 @@ body {
   }
 
   .countdown div {
-    /* Removed background for clean look */
     padding: 0;
   }
 
@@ -51,6 +66,21 @@ body {
     max-width: 400px;
     margin: 0 auto 50px;
   }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .countdown {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 2rem;
+    }
+    .countdown-container {
+      max-width: 100%;
+    }
+    .countdown-bg {
+      max-height: 250px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -58,12 +88,15 @@ body {
 <!-- Logo -->
 <img src="assets/logo.png" alt="Koldevi Logo" class="logo">
 
-<!-- Countdown Timer -->
-<div class="countdown">
-  <div id="days">00</div>
-  <div id="hours">00</div>
-  <div id="minutes">00</div>
-  <div id="seconds">00</div>
+<!-- Countdown Timer with background behind it -->
+<div class="countdown-container">
+  <img src="assets/passwordpage background pic.jpg" alt="Background" class="countdown-bg">
+  <div class="countdown">
+    <div id="days">00</div>
+    <div id="hours">00</div>
+    <div id="minutes">00</div>
+    <div id="seconds">00</div>
+  </div>
 </div>
 
 <!-- Klaviyo Form -->
