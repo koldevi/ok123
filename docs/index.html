@@ -3,34 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koldevi VIP</title>
+  <title>Koldevi VIP Access</title>
   <link rel="icon" href="assets/favico.png" type="image/png">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background: #fff;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
     }
+
     img {
       width: 160px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
-    .klaviyo-form-VZJ6EQ {
+
+    .klaviyo-form {
+      width: 100%;
       max-width: 400px;
-      width: 90%;
     }
   </style>
 </head>
 <body>
   <img src="assets/logo.png" alt="Koldevi Logo">
-  <div class="klaviyo-form-VZJ6EQ"></div>
+  <div class="klaviyo-form-VZJ6EQ klaviyo-form"></div>
 
-  <!-- Klaviyo script -->
+  <!-- Klaviyo embed script -->
   <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YOUR_KLAVIYO_ID"></script>
 </body>
 </html>
