@@ -3,123 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KOLDEVIP</title>
+<title>KOLDEVIP PASS</title>
 <link rel="icon" href="assets/background_lol.jpg" type="image/jpg">
 
 <!-- Anton font from Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-  /* Fullscreen background */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('assets/background_lol.jpg') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  color: #fff;
-  text-align: center;
-}
-
-
-  /* Logo on top */
-  .logo {
-    margin-top: 20px;
-    max-width: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  /* Fullscreen background centered */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    color: #000; /* countdown text in black */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/background_lol.jpg') no-repeat center center fixed;
+    background-size: contain; /* keeps image centered and fully visible */
   }
 
-  /* Countdown numbers */
+  /* Countdown container */
   .countdown {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin: 50px 0;
-    font-size: 3rem;
+    gap: 20px;
+    font-size: 2.5rem;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
+  }
+
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .countdown-item span {
+    font-size: 1rem;
     font-weight: normal;
-  }
-
-  .countdown div {
-    padding: 0;
-  }
-
-  /* Klaviyo form container */
-  .klaviyo-form-VZJ6EQ {
-    max-width: 400px;
-    margin: 0 auto 50px;
+    margin-top: 5px;
   }
 
   /* Mobile adjustments */
   @media (max-width: 1080px) {
-    body {
-      background-size: contain;
-      background-position: top center;
-    }
     .countdown {
-      font-size: 2.5rem;
       flex-wrap: wrap;
+      font-size: 2rem;
       gap: 15px;
     }
   }
 </style>
-
 </head>
 <body>
 
-<!-- Logo -->
-<img src="assets/background_lol.jpg" alt="Koldevi Logo" class="logo">
-
-
 <!-- Countdown Timer -->
 <div class="countdown">
-  <div id="days">00</div>
-  <div id="hours">00</div>
-  <div id="minutes">00</div>
-  <div id="seconds">00</div>
+  <div class="countdown-item">
+    <div id="days">00</div>
+    <span>DAYS</span>
+  </div>
+  <div class="countdown-item">
+    <div id="hours">00</div>
+    <span>HOURS</span>
+  </div>
+  <div class="countdown-item">
+    <div id="minutes">00</div>
+    <span>MINUTES</span>
+  </div>
+  <div class="countdown-item">
+    <div id="seconds">00</div>
+    <span>SECONDS</span>
+  </div>
 </div>
-
-<!-- Klaviyo Form -->
-<div class="klaviyo-form-VZJ6EQ"></div>
 
 <!-- Countdown Script -->
 <script>
-  const targetDate = new Date('October 19, 2025 00:00:00').getTime();
-  const countdownEl = {
-    days: document.getElementById('days'),
-    hours: document.getElementById('hours'),
-    minutes: document.getElementById('minutes'),
-    seconds: document.getElementById('seconds')
-  };
+const targetDate = new Date('November 12, 2025 00:00:00').getTime();
+const countdownEl = {
+  days: document.getElementById('days'),
+  hours: document.getElementById('hours'),
+  minutes: document.getElementById('minutes'),
+  seconds: document.getElementById('seconds')
+};
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
 
-    if (distance < 0) {
-      countdownEl.days.innerText = '00';
-      countdownEl.hours.innerText = '00';
-      countdownEl.minutes.innerText = '00';
-      countdownEl.seconds.innerText = '00';
-      return;
-    }
-
-    countdownEl.days.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-    countdownEl.hours.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-    countdownEl.minutes.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-    countdownEl.seconds.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+  if (distance < 0) {
+    countdownEl.days.innerText = '00';
+    countdownEl.hours.innerText = '00';
+    countdownEl.minutes.innerText = '00';
+    countdownEl.seconds.innerText = '00';
+    return;
   }
 
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>
+  countdownEl.days.innerText = String(Math.floor(distance / (1000*60*60*24))).padStart(2,'0');
+  countdownEl.hours.innerText = String(Math.floor((distance % (1000*60*60*24)) / (1000*60*60))).padStart(2,'0');
+  countdownEl.minutes.innerText = String(Math.floor((distance % (1000*60*60)) / (1000*60))).padStart(2,'0');
+  countdownEl.seconds.innerText = String(Math.floor((distance % (1000*60)) / 1000)).padStart(2,'0');
+}
 
-<!-- Klaviyo Embed Script -->
-<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SXp7ce"></script>
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
 
 </body>
 </html>
+
