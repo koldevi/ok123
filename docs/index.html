@@ -19,6 +19,7 @@
     color: #000; /* countdown text in black */
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: url('assets/background_lol.jpg') no-repeat center center fixed;
@@ -33,6 +34,7 @@
     font-size: 2.5rem;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
+    margin-bottom: 30px; /* spacing above Klaviyo form */
   }
 
   .countdown-item {
@@ -45,6 +47,12 @@
     font-size: 1rem;
     font-weight: normal;
     margin-top: 5px;
+  }
+
+  /* Klaviyo form container */
+  .klaviyo-form-VZJ6EQ {
+    max-width: 400px;
+    margin: 0 auto 50px;
   }
 
   /* Mobile adjustments */
@@ -79,6 +87,9 @@
   </div>
 </div>
 
+<!-- Klaviyo Form -->
+<div class="klaviyo-form-VZJ6EQ"></div>
+
 <!-- Countdown Script -->
 <script>
 const targetDate = new Date('November 12, 2025 00:00:00').getTime();
@@ -110,6 +121,9 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 </script>
+
+<!-- Klaviyo Embed Script -->
+<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SXp7ce"></script>
 
 </body>
 </html>
